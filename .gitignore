@@ -1,0 +1,69 @@
+# ============================================================
+# R / RStudio
+# ============================================================
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+
+# renv local library/cache (keep renv.lock when added)
+renv/library/
+renv/staging/
+renv/local/
+renv/cellar/
+
+# ============================================================
+# Restricted or participant-level data
+# ============================================================
+data/raw/
+data/private/
+data/processed/
+data/midus/
+data/restricted/
+
+*.dta
+*.sav
+*.sas7bdat
+*.xpt
+*.rds
+*.RDS
+*.rda
+*.RData
+
+# Common accidental data exports
+*participant*.csv
+*individual*.csv
+*subject*.csv
+*respondent*.csv
+*analytic_data*.csv
+*analysis_data*.csv
+
+# ============================================================
+# HPC / SLURM / scratch
+# ============================================================
+slurm-*.out
+slurm-*.err
+*.out
+*.err
+logs/
+scratch/
+tmp/
+temp/
+
+# Large repetition-level simulation output
+results/intermediate/
+results/raw_repetitions/
+results/chunks/
+results/checkpoints/
+
+# ============================================================
+# OS / editor / temporary files
+# ============================================================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.temp
+~$*
