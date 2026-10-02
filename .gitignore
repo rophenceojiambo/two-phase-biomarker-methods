@@ -1,6 +1,4 @@
-# ============================================================
 # R / RStudio
-# ============================================================
 .Rhistory
 .RData
 .Ruserdata
@@ -13,9 +11,7 @@ renv/staging/
 renv/local/
 renv/cellar/
 
-# ============================================================
 # Restricted or participant-level data
-# ============================================================
 data/raw/
 data/private/
 data/processed/
@@ -39,9 +35,10 @@ data/restricted/
 *analytic_data*.csv
 *analysis_data*.csv
 
-# ============================================================
+# Calibration caches / simulated object caches
+calibration/dgm_cache/
+
 # HPC / SLURM / scratch
-# ============================================================
 slurm-*.out
 slurm-*.err
 *.out
@@ -57,9 +54,7 @@ results/raw_repetitions/
 results/chunks/
 results/checkpoints/
 
-# ============================================================
 # OS / editor / temporary files
-# ============================================================
 .DS_Store
 Thumbs.db
 *.swp
