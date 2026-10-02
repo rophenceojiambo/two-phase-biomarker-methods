@@ -1,38 +1,38 @@
 # Data
 
-## MIDUS empirical application
-
 Participant-level MIDUS data are **not distributed in this public repository**.
 
-The empirical application code is intended to be run only by users with appropriate authorization to access the required MIDUS files. Restricted source data, derived participant-level analytic datasets, and participant-level intermediate objects must remain outside the repository.
+## Required empirical-analysis input
+
+Scripts `44`–`48` expect the authorized analysis-ready file:
+
+```
+data/MIDUS_discrimination_analysis.rds
+```
+
+The location may also be supplied through the `SIM_ANALYTIC_RDS` environment variable where supported.
+
+Restricted source data, the analysis-ready dataset, participant identifiers, participant-level intermediate objects, and restricted metadata must remain outside GitHub.
 
 The repository may contain:
 
-- variable specifications;
-- data-preparation code;
-- analysis code;
-- synthetic or simulated example data;
-- aggregate, disclosure-safe tables and figures used in the manuscript.
+- shareable data-preparation and variable-construction code;
+- simulation scenario definitions;
+- synthetic or simulated example data where appropriate;
+- aggregate disclosure-safe tables, figures, and QC summaries used in the manuscript.
 
-The repository must not contain:
+## Reproducibility gap to close before final release
 
-- raw MIDUS participant-level files;
-- analysis-ready MIDUS participant-level datasets;
-- participant identifiers;
-- restricted metadata;
-- participant-level intermediate exports.
+The current repository contains the analysis code beginning from `MIDUS_discrimination_analysis.rds`, but it does not yet contain the upstream script that constructs that file from the authorized MIDUS source datasets. That script should be added to the public repository if allowed by the applicable data-use terms.
 
-The root `.gitignore` contains additional safeguards against committing common restricted-data file formats.
+## Local data layout
 
-## Suggested local layout
-
-Authorized users may keep restricted files in a local directory such as:
+An authorized user can keep the restricted input locally as:
 
 ```
 data/
-├── raw/          # ignored by Git
-├── processed/    # ignored by Git
+├── MIDUS_discrimination_analysis.rds   # ignored by Git
 └── README.md
 ```
 
-Analysis scripts should use project-relative paths or environment variables rather than hard-coded personal paths.
+The root `.gitignore` prevents common restricted-data formats from being committed.
