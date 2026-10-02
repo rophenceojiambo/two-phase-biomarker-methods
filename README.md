@@ -1,54 +1,100 @@
 # Two-Phase Biomarker Methods
 
-Reproducible code and manuscript-facing results for a methodological study of approaches to handling partially observed leukocyte covariates in a two-phase biomarker design, with an empirical application to MIDUS.
+This repository contains the analysis code supporting a methodological study of approaches for handling partially observed leukocyte-marker covariates in a two-phase biomarker design, together with a real-world application using MIDUS data.
 
-## Repository organization
+The repository is intended to support the manuscript's **code availability** and **data availability** statements. Participant-level MIDUS data are not redistributed here.
 
-The current analysis scripts are intentionally kept at the **repository root** as numbered files (`00_*.R` through `48_*.R`). The scripts source one another by filename and are designed to be run from the project root, so retaining that layout preserves the tested execution workflow.
+## Methods evaluated
 
-- `00_*.R`–`09_*.R` — shared configuration, calibration, primary simulation, summaries, tables, and figures
-- `10_*.R`–`43_*.R` — prespecified simulation sensitivity and robustness analyses
-- `44_*.R`–`48_*.R` — empirical MIDUS application and manuscript outputs
-- `hpc/` — SLURM/Torch submission and orchestration scripts
-- `results/` — manuscript-facing summarized results, quality-control summaries, tables, and figures
-- `manuscript/` — final manuscript tables and figures
-- `data/` — documentation and synthetic/example data only; restricted MIDUS data are excluded
-- `docs/` — simulation design and reproducibility documentation
-- `R/` — reserved for future modularization/refactoring; the validated numbered scripts remain at the root for the manuscript reproducibility release
+The simulation compares six analysis strategies:
+
+1. Naive phase-1 analysis that omits the phase-2 RNA markers
+2. Complete-case analysis restricted to the phase-2 sample
+3. Fully conditional specification multiple imputation (FCS-MI) using `mice`
+4. Joint-model multiple imputation (JM-MI) using `jomo`
+5. Inverse probability weighting (IPW) with stacked sandwich variance
+6. Augmented inverse probability weighting (AIPW) with stacked sandwich variance
+
+The real-world MIDUS application uses the same six estimators.
+
+## Primary simulation design
+
+The primary factorial simulation contains 324 scenarios defined by:
+
+- Phase-1 sample size: 500, 800, or 1,500
+- Phase-2 sampling fraction: 0.25, 0.50, or 0.65
+- Marker contribution to the exposure: R² = 0.01, 0.05, or 0.10
+- Marker contribution to the outcome: R² = 0.00, 0.02, 0.05, or 0.10
+- True exposure effect: 0.00, 0.15, or 0.30
+
+Each primary scenario uses 2,000 Monte Carlo repetitions. Multiple-imputation analyses use 20 imputations; the production JM-MI configuration uses 1,000 burn-in iterations and 1,000 iterations between imputations.
+
+## Repository structure
+
+The validated analysis scripts are intentionally retained at the repository root because they source one another by filename and were executed from the project root.
+
+- `00_config.R` — shared configuration, paths, simulation grid, random-number settings, and reporting thresholds
+- `01_calibrate_midus.R` — calibration from the authorized MIDUS analytic data
+- `02_dgm.R` — primary data-generating mechanism
+- `03_methods.R` — implementations of the six analysis methods
+- `04_build_dgm_cache.R` — primary DGM cache and checks
+- `05_*.R`–`09_*.R` — primary production, combination, summaries, manuscript tables, and figures
+- `10_*.R`–`15_*.R` — AIPW robustness sensitivity analysis
+- `16_*.R`–`21_*.R` — stronger AIPW misspecification sensitivity analysis
+- `22_*.R`–`27_*.R` — empirical-residual sensitivity analysis
+- `28_*.R`–`33_*.R` — phase-2 MCAR sensitivity analysis
+- `34_*.R`–`38_*.R` — FCS predictive mean matching sensitivity analysis
+- `39_*.R`–`43_*.R` — IPW weight-capping sensitivity analysis
+- `44_*.R`–`48_*.R` — MIDUS real-world application and manuscript-output generation
+- `hpc/` — SLURM/Torch submission, checking, and orchestration scripts
+- `data/` — data-access documentation only; restricted MIDUS data are excluded
+- `results/` — disclosure-safe manuscript-facing results to be archived with the paper
+- `docs/` — reproducibility notes and repository guidance
+
+## MIDUS empirical application
+
+The empirical application evaluates standardized everyday discrimination as the exposure and standardized GrimAge2 and DunedinPACE as outcomes. Phase-1 covariates are standardized age, sex, and race/ethnicity; the phase-2 covariates are eight standardized RNA leukocyte-marker transcripts. BMI and assay plate variables are not included in the final analysis.
+
+Authorized users should place the analysis-ready file at:
+
+```
+data/MIDUS_discrimination_analysis.rds
+```
+
+or provide its location through the `SIM_ANALYTIC_RDS` environment variable. This file is intentionally excluded from Git.
 
 ## Data availability
 
-Participant-level MIDUS data are **not distributed in this repository**. Access to MIDUS data is governed by the applicable data-use conditions. This repository contains or will contain the analysis code, variable specifications, and allowable aggregate outputs needed to reproduce the empirical application for users with authorized data access.
+Participant-level MIDUS data are not distributed in this repository. Researchers wishing to reproduce the empirical application must obtain the relevant MIDUS data under the applicable MIDUS access and use conditions.
 
-The analysis scripts expect the authorized analytic dataset locally at `data/MIDUS_discrimination_analysis.rds` by default, or at a path supplied through the `SIM_ANALYTIC_RDS` environment variable. The dataset itself is ignored by Git and must not be committed.
+The public repository may contain only disclosure-safe derived summaries, manuscript tables, figures, and code. Raw data, analysis-ready participant-level data, identifiers, participant-level intermediate files, and restricted metadata must not be committed.
 
-Synthetic data and simulation code used for the methodological evaluation may be distributed here.
+**Important reproducibility note:** scripts `44`–`48` begin from the analysis-ready file `MIDUS_discrimination_analysis.rds`. The script that constructs that file from the authorized MIDUS source datasets is not currently included in this repository. That preparation script should be added before the final archival release if it can be shared under the relevant data-use terms.
 
-## Reproducibility workflow
+## Code availability
 
-The project is organized so that the analysis can be reproduced from a clean checkout:
+All simulation, sensitivity-analysis, real-world analysis, manuscript-output, and HPC orchestration code used for the study is maintained in this repository. The numbered files preserve the execution structure used for the completed analyses.
 
-1. Configure the project and authorized data path.
-2. Run MIDUS calibration.
-3. Build and check the primary data-generating mechanisms.
-4. Run the primary simulation study.
-5. Run prespecified simulation sensitivity analyses.
-6. Combine repetition-level outputs.
-7. Summarize performance measures and Monte Carlo uncertainty.
-8. Generate manuscript figures and tables.
-9. Run the authorized MIDUS empirical application.
-10. Generate and check empirical manuscript outputs.
+The full simulation was run on NYU Torch using the SLURM workflow in `hpc/`. Re-running the full simulation is not required to use this repository as the manuscript code archive; the final release will also contain the compact manuscript-facing results needed to inspect the reported findings.
 
-The full simulation is intended for high-performance computing. Local runs should be limited to calibration, canary, quality-control, and small-scale testing.
+## Results archive
+
+The public results archive should contain summarized, disclosure-safe outputs rather than repetition-level simulation files. See `results/README.md` for the files recommended for archival.
 
 ## Software
 
-Analyses are implemented in R. A locked package environment will be added using `renv`.
+The analyses are implemented in R. The Torch workflow uses R 4.5.1 by default. Required packages are documented in the analysis scripts and `hpc/install_required_packages.R`.
 
-## Public-repository safeguards
+For the final archived release, an exact environment record such as `sessionInfo.txt` or an `renv.lock` file is recommended if available from the analysis environment.
 
-Restricted participant-level data, participant-level intermediate objects, raw SLURM outputs, scratch files, and large repetition-level simulation outputs are excluded through `.gitignore`. Before each public release, repository contents should be checked for accidental data files, local absolute paths, credentials, and disclosure-sensitive outputs.
+## Citation
 
-## Status
+Use the repository's `CITATION.cff` file or GitHub's **Cite this repository** function. Once a versioned archival DOI is available, the DOI should be added to both this README and `CITATION.cff`.
 
-Repository setup is in progress. The cleaned numbered scripts will be added before the clean Torch reproducibility rerun. Manuscript-facing results will be added only after that rerun and quality-control review.
+## License
+
+The source code is released under the MIT License. This license applies to the repository code, not to MIDUS data or other third-party materials.
+
+## Repository status
+
+The cleaned analysis and HPC code are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to add the disclosure-safe final results, add the MIDUS data-preparation script if distributable, record the final software environment if available, and create a tagged release.
