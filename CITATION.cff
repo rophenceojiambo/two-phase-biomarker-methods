@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the accompanying manuscript and this software repository."
+title: "Two-Phase Biomarker Methods: Simulation and MIDUS Application"
+type: software
+authors:
+  - family-names: "Ojiambo"
+    given-names: "Rophence"
+repository-code: "https://github.com/rophenceojiambo/two-phase-biomarker-methods"
+url: "https://github.com/rophenceojiambo/two-phase-biomarker-methods"
+license: MIT
+keywords:
+  - biostatistics
+  - simulation study
+  - two-phase sampling
+  - multiple imputation
+  - inverse probability weighting
+  - augmented inverse probability weighting
+  - MIDUS
