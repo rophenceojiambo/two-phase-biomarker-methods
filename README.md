@@ -34,7 +34,7 @@ Each primary scenario uses 2,000 Monte Carlo repetitions. Multiple-imputation an
 The validated analysis scripts are intentionally retained at the repository root because they source one another by filename and were executed from the project root.
 
 - `00_config.R` — shared configuration, paths, simulation grid, random-number settings, and reporting thresholds
-- `01_calibrate_midus.R` — calibration from the authorized MIDUS analytic data
+- `prepare_midus_analytic_sample.R` — constructs the analysis-ready MIDUS dataset from authorized source files\n- `01_calibrate_midus.R` — calibration from the authorized MIDUS analytic data
 - `02_dgm.R` — primary data-generating mechanism
 - `03_methods.R` — implementations of the six analysis methods
 - `04_build_dgm_cache.R` — primary DGM cache and checks
@@ -69,7 +69,7 @@ Participant-level MIDUS data are not distributed in this repository. Researchers
 
 The public repository may contain only disclosure-safe derived summaries, manuscript tables, figures, and code. Raw data, analysis-ready participant-level data, identifiers, participant-level intermediate files, and restricted metadata must not be committed.
 
-**Important reproducibility note:** scripts `44`–`48` begin from the analysis-ready file `MIDUS_discrimination_analysis.rds`. The script that constructs that file from the authorized MIDUS source datasets is not currently included in this repository. That preparation script should be added before the final archival release if it can be shared under the relevant data-use terms.
+The shareable preparation script `prepare_midus_analytic_sample.R` documents how the analysis-ready MIDUS file is constructed from the authorized source datasets. The source datasets themselves remain restricted and are not included.
 
 ## Code availability
 
@@ -97,4 +97,4 @@ The source code is released under the MIT License. This license applies to the r
 
 ## Repository status
 
-The cleaned analysis and HPC code are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to add the disclosure-safe final results, add the MIDUS data-preparation script if distributable, record the final software environment if available, and create a tagged release.
+The cleaned analysis and HPC code are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to add the disclosure-safe final results, record the final software environment if available, and create a tagged release.
