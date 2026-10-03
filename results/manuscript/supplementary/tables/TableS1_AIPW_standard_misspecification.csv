@@ -1,0 +1,9 @@
+Setting,N,Phase2_fraction,R2_A_marker,R2_Y_marker,Theta,Specification,Repetitions,Mean_estimate,Bias,Empirical_SE,Model_SE,SE_ratio,Coverage_pct,MSE
+MIDUS-like,800,0.65,0.05,0.05,0.15,Both correct,2000,0.1485,-0.0015,0.0353,0.0339,0.960,93.2,0.00125
+MIDUS-like,800,0.65,0.05,0.05,0.15,Selection correct only,2000,0.1486,-0.0014,0.0353,0.0339,0.962,93.2,0.00125
+MIDUS-like,800,0.65,0.05,0.05,0.15,Augmentation correct only,2000,0.1485,-0.0015,0.0352,0.0339,0.961,93.1,0.00124
+MIDUS-like,800,0.65,0.05,0.05,0.15,Both misspecified,2000,0.1487,-0.0013,0.0352,0.0339,0.962,93.0,0.00124
+Stress,500,0.25,0.10,0.10,0.15,Both correct,2000,0.1490,-0.0010,0.0613,0.0582,0.950,93.4,0.00375
+Stress,500,0.25,0.10,0.10,0.15,Selection correct only,2000,0.1496,-0.0004,0.0603,0.0595,0.987,94.7,0.00363
+Stress,500,0.25,0.10,0.10,0.15,Augmentation correct only,2000,0.1491,-0.0009,0.0611,0.0582,0.953,93.8,0.00373
+Stress,500,0.25,0.10,0.10,0.15,Both misspecified,2000,0.1498,-0.0002,0.0600,0.0592,0.987,94.6,0.00360

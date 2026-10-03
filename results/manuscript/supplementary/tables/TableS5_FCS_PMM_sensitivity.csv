@@ -1,0 +1,5 @@
+Scenario,N,Phase2_fraction,Theta,PMM_bias,Normal_bias,Delta_bias,PMM_SE_ratio,Normal_SE_ratio,Delta_SE_ratio,PMM_coverage_pct,Normal_coverage_pct,Delta_coverage_pp,PMM_MSE,Normal_MSE,PMM_TypeI_pct,Normal_TypeI_pct,Delta_TypeI_pp
+MIDUS-like null,800,0.65,0,-0.0009,-0.0009,-0.0000,0.975,0.975,-0.000,94.8,94.8,0.0,0.00129,0.00129,5.1,5.1,0.0
+MIDUS-like alternative,800,0.65,0.15,-0.0011,-0.0011,0.0001,0.972,0.976,-0.003,94.2,94.5,-0.3,0.00124,0.00124,,,
+Stress null,500,0.25,0,0.0046,0.0037,0.0010,1.072,1.090,-0.018,96.3,96.8,-0.5,0.00309,0.00305,3.8,3.3,0.5
+Stress alternative,500,0.25,0.15,0.0036,0.0025,0.0011,1.024,1.035,-0.011,95.8,95.9,-0.1,0.00323,0.00324,,,
