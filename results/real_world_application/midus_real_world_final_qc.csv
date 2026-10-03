@@ -1,0 +1,22 @@
+check,passed,overall_pass
+Exactly two outcomes,TRUE,TRUE
+Exactly six methods,TRUE,TRUE
+Exactly 12 outcome-method rows,TRUE,TRUE
+One row per expected outcome-method combination,TRUE,TRUE
+All method fits have status ok,TRUE,TRUE
+All estimates are finite,TRUE,TRUE
+All standard errors are finite and positive,TRUE,TRUE
+All confidence limits are finite,TRUE,TRUE
+Saved result-QC file passes for all 12 fits,TRUE,TRUE
+Phase-1 N is positive,TRUE,TRUE
+Phase-2 N is positive and no larger than Phase-1 N,TRUE,TRUE
+Saved Phase-2 fraction equals N2/N1,TRUE,TRUE
+No partially observed RNA-marker blocks,TRUE,TRUE
+Exactly eight RNA markers are represented,TRUE,TRUE
+All eight markers have the same missing count,TRUE,TRUE
+RNA missing count equals number outside Phase 2,TRUE,TRUE
+All weight diagnostics are finite,TRUE,TRUE
+All weights are positive,TRUE,TRUE
+Weight 99th percentile does not exceed maximum,TRUE,TRUE
+Weight ESS is positive and no larger than Phase-2 N,TRUE,TRUE
+Maximum observed weight is below 10,TRUE,TRUE

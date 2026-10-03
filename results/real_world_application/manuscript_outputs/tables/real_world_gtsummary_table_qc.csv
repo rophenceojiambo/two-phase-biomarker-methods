@@ -1,0 +1,14 @@
+check,passed,overall_pass
+All expected table files exist,TRUE,TRUE
+All expected table files are nonempty,TRUE,TRUE
+All Word documents exceed 1 KB,TRUE,TRUE
+Table 3 exposure and outcomes have full-sample mean 0 and SD 1,TRUE,TRUE
+Saved Table 3 object is a gtsummary object,TRUE,TRUE
+Saved Table 4A object is a gtsummary object,TRUE,TRUE
+Saved Table 4B object is a gtsummary object,TRUE,TRUE
+"Table 3 displays SMD magnitude only, without CI text",TRUE,TRUE
+Table 4 coefficients and CIs use four decimal places,TRUE,TRUE
+Table 4 p values use three decimal places or <0.001,TRUE,TRUE
+Table 4A contains all six method columns,TRUE,TRUE
+Table 4A contains both outcomes,TRUE,TRUE
+Table 4B methods appear in the prespecified order,TRUE,TRUE

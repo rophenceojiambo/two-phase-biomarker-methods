@@ -1,0 +1,4 @@
+MIDUS REAL-WORLD GTSUMMARY TABLES: PASS
+Completed: 2026-10-03 13:47:14.156776
+QC checks: 13
+All checks passed: TRUE

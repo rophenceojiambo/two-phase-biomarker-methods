@@ -1,0 +1,7 @@
+MIDUS REAL-WORLD APPLICATION: PASS
+Completed: 2026-10-03 13:46:09.331597
+Phase-1 N: 786
+Phase-2 N: 518
+Phase-2 fraction: 0.659033
+Maximum observed weight: 2.034104
+Minimum weight ESS fraction: 0.992808
