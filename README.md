@@ -82,7 +82,7 @@ The full simulation was run on NYU Torch using the SLURM workflow in `hpc/`. Re-
 
 The public results archive contains summarized, disclosure-safe primary simulation results, sensitivity-analysis summaries and QC files, calibration summaries, and aggregate real-world MIDUS outputs. Raw Monte Carlo repetitions, caches, checkpoints, and participant-level data are intentionally excluded.
 
-The exact simulation figures used in the manuscript should be placed in `results/figures/03_final_manuscript/` before the versioned release is frozen. See `results/README.md` for the archival policy and recommended files.
+A parsimonious set of final simulation figures has been archived in `results/figures/03_final_manuscript/`, with the selection rationale documented in that directory. See `results/README.md` for the archival policy and recommended files.
 
 ## Software
 
@@ -100,4 +100,4 @@ The source code is released under the MIT License. This license applies to the r
 
 ## Repository status
 
-The cleaned analysis and HPC code, shareable MIDUS preparation script, software-environment record, disclosure-safe primary simulation summaries, sensitivity-analysis results, calibration summaries, and aggregate real-world manuscript outputs are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to select and archive the final simulation figures, complete the final disclosure and integrity review, update citation metadata as appropriate, regenerate the public-results manifest for the frozen archive, and create the tagged archival release.
+The cleaned analysis and HPC code, shareable MIDUS preparation script, software-environment record, disclosure-safe primary simulation summaries, sensitivity-analysis results, calibration summaries, and aggregate real-world manuscript outputs are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to complete the final disclosure and integrity review, update citation metadata as appropriate, regenerate the public-results manifest for the frozen archive, and create the tagged archival release.
