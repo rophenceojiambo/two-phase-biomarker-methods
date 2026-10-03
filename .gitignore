@@ -16,7 +16,8 @@ data/raw/
 data/private/
 data/processed/
 data/midus/
-data/restricted/\ndata/source/
+data/restricted/
+data/source/
 
 *.dta
 *.sav
@@ -25,7 +26,8 @@ data/restricted/\ndata/source/
 *.rds
 *.RDS
 *.rda
-*.RData\ndata/*.csv
+*.RData
+data/*.csv
 
 # Common accidental data exports
 *participant*.csv
