@@ -76,11 +76,13 @@ The shareable preparation script `prepare_midus_analytic_sample.R` documents how
 
 All simulation, sensitivity-analysis, real-world analysis, manuscript-output, and HPC orchestration code used for the study is maintained in this repository. The numbered files preserve the execution structure used for the completed analyses.
 
-The full simulation was run on NYU Torch using the SLURM workflow in `hpc/`. Re-running the full simulation is not required to use this repository as the manuscript code archive; the final release will also contain the compact manuscript-facing results needed to inspect the reported findings.
+The full simulation was run on NYU Torch using the SLURM workflow in `hpc/`. Re-running the full simulation is not required to use this repository as the manuscript code archive; the archived summaries and manuscript-facing outputs allow readers to inspect the reported findings without reproducing all Monte Carlo runs.
 
 ## Results archive
 
-The public results archive should contain summarized, disclosure-safe outputs rather than repetition-level simulation files. See `results/README.md` for the files recommended for archival.
+The public results archive contains summarized, disclosure-safe primary simulation results, sensitivity-analysis summaries and QC files, calibration summaries, and aggregate real-world MIDUS outputs. Raw Monte Carlo repetitions, caches, checkpoints, and participant-level data are intentionally excluded.
+
+The exact simulation figures used in the manuscript should be placed in `results/figures/03_final_manuscript/` before the versioned release is frozen. See `results/README.md` for the archival policy and recommended files.
 
 ## Software
 
@@ -98,4 +100,4 @@ The source code is released under the MIT License. This license applies to the r
 
 ## Repository status
 
-The cleaned analysis and HPC code, shareable MIDUS preparation script, and software-environment record are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to add the disclosure-safe final results, complete a final disclosure/repository review, and create a tagged release.
+The cleaned analysis and HPC code, shareable MIDUS preparation script, software-environment record, disclosure-safe primary simulation summaries, sensitivity-analysis results, calibration summaries, and aggregate real-world manuscript outputs are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to select and archive the final simulation figures, complete the final disclosure and integrity review, update citation metadata as appropriate, regenerate the public-results manifest for the frozen archive, and create the tagged archival release.
