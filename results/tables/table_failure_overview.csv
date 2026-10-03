@@ -1,0 +1,7 @@
+method,mean_failure_rate,max_failure_rate,scenarios_with_any_failure
+AIPW,0,0,0
+CCA,0,0,0
+FCS-MI,0,0,0
+IPW,0,0,0
+JM-MI,0,0,0
+Naive,0,0,0
