@@ -2,17 +2,17 @@
 
 This directory contains the parsimonious figure set selected from the complete primary-simulation figure library for manuscript archiving.
 
-The figures were generated from the validated primary simulation summaries by `09_make_simulation_figures.R`. The archived SVG files are vector conversions of the corresponding PDF manuscript-candidate figures and do not alter the plotted data or results.
+The figures were generated from the validated primary simulation summaries by `09_make_simulation_figures.R`. The original PDF manuscript-candidate figures supplied from the completed simulation run are archived here directly.
 
 ## Core MIDUS-like figures
 
 The MIDUS-like auxiliary-information regime uses \(R_A^2 = 0.05\) and \(R_Y^2 = 0.05\).
 
-- `core/bias_MIDUS_like.svg` — empirical bias across Phase-1 sample sizes, Phase-2 fractions, and non-null effect sizes.
-- `core/empirical_se_MIDUS_like.svg` — sampling variability of the estimators.
-- `core/se_ratio_MIDUS_like.svg` — model-based SE divided by empirical SE, directly assessing variance-estimator calibration.
-- `core/coverage_MIDUS_like.svg` — 95% confidence-interval coverage.
-- `core/type1_MIDUS_like.svg` — null rejection rates.
+- `core/bias_MIDUS_like.pdf` — empirical bias across Phase-1 sample sizes, Phase-2 fractions, and non-null effect sizes.
+- `core/empirical_se_MIDUS_like.pdf` — sampling variability of the estimators.
+- `core/se_ratio_MIDUS_like.pdf` — model-based SE divided by empirical SE, directly assessing variance-estimator calibration.
+- `core/coverage_MIDUS_like.pdf` — 95% confidence-interval coverage.
+- `core/type1_MIDUS_like.pdf` — null rejection rates.
 
 These five figures form the primary simulation-performance set because together they address bias, precision, standard-error calibration, interval calibration, and Type I error.
 
@@ -20,16 +20,16 @@ These five figures form the primary simulation-performance set because together 
 
 The strong auxiliary-information regime uses \(R_A^2 = 0.10\) and \(R_Y^2 = 0.10\).
 
-- `stress/bias_strong_auxiliary_information.svg`
-- `stress/coverage_strong_auxiliary_information.svg`
-- `stress/type1_strong_auxiliary_information.svg`
+- `stress/bias_strong_auxiliary_information.pdf`
+- `stress/coverage_strong_auxiliary_information.pdf`
+- `stress/type1_strong_auxiliary_information.pdf`
 
 These were retained to show how performance changes when the omitted Phase-2 marker information is most consequential.
 
 ## Supporting figures
 
-- `supporting/power_MIDUS_like.svg` — power under the MIDUS-like regime; interpret together with the corresponding Type I error figure.
-- `supporting/runtime_by_method_and_N.svg` — computational cost by method and Phase-1 sample size.
+- `supporting/power_MIDUS_like.pdf` — power under the MIDUS-like regime; interpret together with the corresponding Type I error figure.
+- `supporting/runtime_by_method_and_N.pdf` — computational cost by method and Phase-1 sample size.
 
 ## Candidate figures not duplicated here
 
