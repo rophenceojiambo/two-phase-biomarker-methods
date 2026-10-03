@@ -32,25 +32,30 @@
 #   - DNAm plate and RNA plate are not used.
 #   - The script uses the validated 03_methods.R implementation, so the real-data
 #     application matches the final simulation estimators.
-#   - Run this script from the local midus_two_phase_sim project directory,
-#     where 00_config.R and 03_methods.R are located.
+#   - Run this script from the repository root, where 00_config.R and
+#     03_methods.R are located.
 ################################################################################
 
 # ==============================================================================
 # 1. PATHS
 # ==============================================================================
 
-data_dir <- "data"
-
-analytic_file <- file.path(
-  data_dir, "MIDUS_discrimination_analysis.rds"
+# Use an explicitly supplied authorized MIDUS file when available. Otherwise,
+# fall back to the conventional ignored path under data/.
+analytic_file <- Sys.getenv(
+  "SIM_ANALYTIC_RDS",
+  unset = file.path(
+    "data",
+    "MIDUS_discrimination_analysis.rds"
+  )
 )
 
 if (!file.exists(analytic_file)) {
   stop(
     "Analytic dataset not found:\n",
     analytic_file,
-    "\nRun the MIDUS analytic-sample construction script first."
+    "\nProvide an authorized file via SIM_ANALYTIC_RDS or run the ",
+    "MIDUS analytic-sample construction script first."
   )
 }
 
@@ -65,7 +70,7 @@ missing_project_files <- required_project_files[
 
 if (length(missing_project_files) > 0L) {
   stop(
-    "Run this script from the local midus_two_phase_sim directory.\n",
+    "Run this script from the repository root.\n",
     "Missing project file(s): ",
     paste(missing_project_files, collapse = ", ")
   )
