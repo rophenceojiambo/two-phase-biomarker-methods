@@ -1,0 +1,3 @@
+sensitivity_scenario_id,primary_scenario_id,scenario_label,theta_true,capped_null_rejection_rate,capped_mcse_null_rejection,uncapped_null_rejection_rate,uncapped_mcse_null_rejection,delta_null_rejection_rate
+1,60,MIDUS-like null,0,0.058,0.0052266624149642565,0.058,0.00522666241496425,0
+3,100,Stress null,0,0.083,0.006168914004912048,0.0845,0.00621931467285584,-0.0015000000000000013

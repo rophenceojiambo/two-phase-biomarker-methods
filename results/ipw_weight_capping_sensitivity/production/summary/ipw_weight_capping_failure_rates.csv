@@ -1,0 +1,5 @@
+sensitivity_scenario_id,primary_scenario_id,scenario_label,scenario_key,N,phase2_fraction,r2_a_marker,r2_y_marker,theta_true,method,nsim_total,n_failed,failure_rate,mcse_failure
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,IPW-Capped-1-99,2000,0,0,0
+2,168,MIDUS-like alternative,midus_alternative,800,0.65,0.05,0.05,0.15,IPW-Capped-1-99,2000,0,0,0
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,IPW-Capped-1-99,2000,0,0,0
+4,208,Stress alternative,stress_alternative,500,0.25,0.1,0.1,0.15,IPW-Capped-1-99,2000,0,0,0

@@ -1,0 +1,13 @@
+check,passed,overall_summary_pass
+Four capped-IPW scenarios were summarized,TRUE,TRUE
+All four scenario performance rows are present,TRUE,TRUE
+Both null-scenario Type I error rows are present,TRUE,TRUE
+All key performance summaries are finite,TRUE,TRUE
+Capped versus untruncated performance comparison contains four rows,TRUE,TRUE
+Type I error comparison contains two rows,TRUE,TRUE
+Failure comparison contains four rows,TRUE,TRUE
+Weight diagnostics contain four rows,TRUE,TRUE
+Paired comparison contains four rows,TRUE,TRUE
+"Each paired comparison joins all 2,000 repetitions and has valid pairs",TRUE,TRUE
+Raw-weight diagnostics reproduce primary IPW for all repetitions,TRUE,TRUE
+"Canary, primary-IPW, and validated-function reproduction remain verified",TRUE,TRUE
