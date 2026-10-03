@@ -1,0 +1,14 @@
+component,item,specification
+Aims,Primary question,Compare six approaches for estimating the adjusted exposure coefficient when eight correlated RNA-based leukocyte-marker transcripts are observed only in a nested Phase-2 subsample.
+Data-generating mechanism,Phase-1 sample size N,"500, 800, 1500"
+Data-generating mechanism,Expected Phase-2 fraction,"0.25, 0.50, 0.65"
+Data-generating mechanism,Exposure-marker partial R2,"0.01, 0.05, 0.10"
+Data-generating mechanism,Outcome-marker partial R2,"0, 0.02, 0.05, 0.10"
+Data-generating mechanism,True exposure coefficient theta,"0, 0.15, 0.30"
+Data-generating mechanism,Primary marker residual distribution,Multivariate normal calibrated to MIDUS
+Data-generating mechanism,Phase-2 availability,"MAR given A, Y, age, sex, race/ethnicity; intercept calibrated to target fraction"
+Estimand,Target,"Exposure coefficient theta from the full-data linear regression adjusted for age, sex, race/ethnicity, and the eight transcript markers"
+Methods,Compared methods,"Naive Phase-1, CCA, FCS-MI, JM-MI, IPW, AIPW"
+Performance,Primary measures,"Bias, empirical SE, model-based SE, SE ratio, 95% coverage, bias-eliminated coverage, Type I error when theta=0, failure rate"
+Performance,Additional diagnostics,"MSE, relative precision, runtime, Phase-2 sample size, selection probabilities, IPW/AIPW weight diagnostics"
+Monte Carlo,Repetitions,"2,000 per DGM; 324 primary DGMs; 648,000 simulated datasets"
