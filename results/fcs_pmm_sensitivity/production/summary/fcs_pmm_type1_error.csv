@@ -1,0 +1,3 @@
+sensitivity_scenario_id,primary_scenario_id,scenario_label,scenario_key,N,phase2_fraction,r2_a_marker,r2_y_marker,theta_true,method,nsim_total,nsim_success,null_rejection_rate,mcse_null_rejection
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,FCS-PMM,2000,2000,0.0515,0.004942051699446294
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,FCS-PMM,2000,2000,0.0375,0.004248161366991607

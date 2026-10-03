@@ -1,0 +1,5 @@
+sensitivity_scenario_id,primary_scenario_id,scenario_label,theta_true,pmm_n_failed,pmm_failure_rate,pmm_mcse_failure,norm_n_failed,norm_failure_rate,norm_mcse_failure,delta_failure_rate
+1,60,MIDUS-like null,0,0,0,0,0,0,0,0
+2,168,MIDUS-like alternative,0.15,0,0,0,0,0,0,0
+3,100,Stress null,0,0,0,0,0,0,0,0
+4,208,Stress alternative,0.15,0,0,0,0,0,0,0
