@@ -21,9 +21,11 @@ The repository may contain:
 - synthetic or simulated example data where appropriate;
 - aggregate disclosure-safe tables, figures, and QC summaries used in the manuscript.
 
-## Reproducibility gap to close before final release
+## Data-preparation code
 
-The current repository contains the analysis code beginning from `MIDUS_discrimination_analysis.rds`, but it does not yet contain the upstream script that constructs that file from the authorized MIDUS source datasets. That script should be added to the public repository if allowed by the applicable data-use terms.
+The repository includes `prepare_midus_analytic_sample.R`, which documents the construction of `MIDUS_discrimination_analysis.rds` from authorized MIDUS source datasets.
+
+The script is shareable, but the source datasets and the resulting participant-level analysis file are restricted and intentionally excluded from Git.
 
 ## Local data layout
 
