@@ -42,7 +42,7 @@ The simulation creates several classes of files:
 
 Only the compact summaries, QC files supporting the manuscript, and final figure/table products need to be archived publicly. Raw repetition-level objects and caches are regenerable and unnecessarily large.
 
-The primary simulation summaries and manuscript-facing tables are archived under `results/summary/` and `results/tables/`. Sensitivity-analysis summaries and QC outputs are archived under their corresponding subdirectories in `results/`. The complete generated simulation-figure library is represented by machine-readable figure data and a figure manifest. A parsimonious manuscript-facing selection has been archived in `results/figures/03_final_manuscript/`.
+The primary simulation summaries remain under `results/summary/` and `results/tables/`. Sensitivity-analysis summaries and QC outputs remain under their corresponding analysis-specific subdirectories in `results/`. A clean reader-facing manuscript layer is archived under `results/manuscript/`: main-text Figures 1–6 and Tables 3–4 are grouped under `main/`, while Supplementary Figures S1–S10 are grouped under `supplementary/`. The complete generated simulation-figure library is represented by machine-readable figure data and the figure manifest.
 
 ## Real-world outputs
 
