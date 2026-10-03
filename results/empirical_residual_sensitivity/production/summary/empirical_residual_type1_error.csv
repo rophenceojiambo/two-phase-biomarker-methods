@@ -1,0 +1,13 @@
+sensitivity_scenario_id,primary_scenario_id,scenario_label,scenario_key,N,phase2_fraction,r2_a_marker,r2_y_marker,theta_true,marker_error,method,nsim_total,nsim_success,null_rejection_rate,mcse_null_rejection
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,empirical,AIPW,2000,2000,0.055,0.005097793640389928
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,empirical,CCA,2000,2000,0.053,0.005009540897128199
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,empirical,FCS-MI,2000,2000,0.0515,0.004942051699446294
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,empirical,IPW,2000,2000,0.0575,0.005205465877325487
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,empirical,JM-MI,2000,2000,0.052,0.004964675215963275
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,empirical,Naive,2000,2000,0.064,0.005472842040475863
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,empirical,AIPW,2000,2000,0.06,0.0053103672189407005
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,empirical,CCA,2000,2000,0.048,0.0047799581588126895
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,empirical,FCS-MI,2000,2000,0.036,0.004165573189850348
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,empirical,IPW,2000,2000,0.081,0.006100778638829638
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,empirical,JM-MI,2000,2000,0.0395,0.00435544199823623
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,empirical,Naive,2000,2000,0.074,0.005853375094763704

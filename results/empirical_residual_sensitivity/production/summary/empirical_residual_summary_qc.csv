@@ -1,0 +1,9 @@
+check,hard_check,passed,overall_summary_pass
+All empirical scenarios were summarized,TRUE,TRUE,TRUE
+All scenario-method performance rows are present,TRUE,TRUE,TRUE
+All null-scenario method rows are present,TRUE,TRUE,TRUE
+All key performance summaries are finite,TRUE,TRUE,TRUE
+Matched primary performance comparison is complete,TRUE,TRUE,TRUE
+Matched Type I error comparison is complete,TRUE,TRUE,TRUE
+Matched failure comparison is complete,TRUE,TRUE,TRUE
+Canary reproduction remains verified,TRUE,TRUE,TRUE

@@ -1,0 +1,3 @@
+setting_id,setting,n_compared,max_abs_estimate_difference,max_abs_se_difference,exact_reproduction
+1,MIDUS-like,2000,0,0,TRUE
+2,Stress,2000,0,0,TRUE
