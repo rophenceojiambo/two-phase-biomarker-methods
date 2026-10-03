@@ -34,7 +34,8 @@ Each primary scenario uses 2,000 Monte Carlo repetitions. Multiple-imputation an
 The validated analysis scripts are intentionally retained at the repository root because they source one another by filename and were executed from the project root.
 
 - `00_config.R` — shared configuration, paths, simulation grid, random-number settings, and reporting thresholds
-- `prepare_midus_analytic_sample.R` — constructs the analysis-ready MIDUS dataset from authorized source files\n- `01_calibrate_midus.R` — calibration from the authorized MIDUS analytic data
+- `prepare_midus_analytic_sample.R` — constructs the analysis-ready MIDUS dataset from authorized source files
+- `01_calibrate_midus.R` — calibration from the authorized MIDUS analytic data
 - `02_dgm.R` — primary data-generating mechanism
 - `03_methods.R` — implementations of the six analysis methods
 - `04_build_dgm_cache.R` — primary DGM cache and checks
@@ -85,7 +86,7 @@ The public results archive should contain summarized, disclosure-safe outputs ra
 
 The analyses are implemented in R. The Torch workflow uses R 4.5.1 by default. Required packages are documented in the analysis scripts and `hpc/install_required_packages.R`.
 
-For the final archived release, an exact environment record such as `sessionInfo.txt` or an `renv.lock` file is recommended if available from the analysis environment.
+The exact software environment captured from the analysis setup is recorded in `sessionInfo.txt`.
 
 ## Citation
 
@@ -97,4 +98,4 @@ The source code is released under the MIT License. This license applies to the r
 
 ## Repository status
 
-The cleaned analysis and HPC code are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to add the disclosure-safe final results, record the final software environment if available, and create a tagged release.
+The cleaned analysis and HPC code, shareable MIDUS preparation script, and software-environment record are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to add the disclosure-safe final results, complete a final disclosure/repository review, and create a tagged release.
