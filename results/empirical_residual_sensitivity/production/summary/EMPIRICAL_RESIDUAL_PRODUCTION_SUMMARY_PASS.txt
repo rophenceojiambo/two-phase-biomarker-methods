@@ -1,0 +1,6 @@
+EMPIRICAL RESIDUAL PRODUCTION SUMMARY: PASS
+Completed: 2026-09-01 14:07:35.392382
+Production scenarios: 4
+Scenario-method performance rows: 24
+Null-scenario method rows: 12
+Failure-rate review flags: 0

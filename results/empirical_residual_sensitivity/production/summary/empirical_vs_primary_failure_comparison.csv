@@ -1,0 +1,25 @@
+sensitivity_scenario_id,primary_scenario_id,scenario_label,scenario_key,N,phase2_fraction,r2_a_marker,r2_y_marker,theta_true,method,empirical_n_failed,empirical_failure_rate,empirical_mcse_failure,primary_n_failed,primary_failure_rate,primary_mcse_failure,delta_failure_rate
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,AIPW,0,0,0,0,0,0,0
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,CCA,0,0,0,0,0,0,0
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,FCS-MI,0,0,0,0,0,0,0
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,IPW,0,0,0,0,0,0,0
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,JM-MI,0,0,0,0,0,0,0
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,Naive,0,0,0,0,0,0,0
+2,168,MIDUS-like alternative,midus_alternative,800,0.65,0.05,0.05,0.15,AIPW,0,0,0,0,0,0,0
+2,168,MIDUS-like alternative,midus_alternative,800,0.65,0.05,0.05,0.15,CCA,0,0,0,0,0,0,0
+2,168,MIDUS-like alternative,midus_alternative,800,0.65,0.05,0.05,0.15,FCS-MI,0,0,0,0,0,0,0
+2,168,MIDUS-like alternative,midus_alternative,800,0.65,0.05,0.05,0.15,IPW,0,0,0,0,0,0,0
+2,168,MIDUS-like alternative,midus_alternative,800,0.65,0.05,0.05,0.15,JM-MI,0,0,0,0,0,0,0
+2,168,MIDUS-like alternative,midus_alternative,800,0.65,0.05,0.05,0.15,Naive,0,0,0,0,0,0,0
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,AIPW,0,0,0,0,0,0,0
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,CCA,0,0,0,0,0,0,0
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,FCS-MI,0,0,0,0,0,0,0
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,IPW,0,0,0,0,0,0,0
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,JM-MI,0,0,0,0,0,0,0
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,Naive,0,0,0,0,0,0,0
+4,208,Stress alternative,stress_alternative,500,0.25,0.1,0.1,0.15,AIPW,0,0,0,0,0,0,0
+4,208,Stress alternative,stress_alternative,500,0.25,0.1,0.1,0.15,CCA,0,0,0,0,0,0,0
+4,208,Stress alternative,stress_alternative,500,0.25,0.1,0.1,0.15,FCS-MI,0,0,0,0,0,0,0
+4,208,Stress alternative,stress_alternative,500,0.25,0.1,0.1,0.15,IPW,0,0,0,0,0,0,0
+4,208,Stress alternative,stress_alternative,500,0.25,0.1,0.1,0.15,JM-MI,0,0,0,0,0,0,0
+4,208,Stress alternative,stress_alternative,500,0.25,0.1,0.1,0.15,Naive,0,0,0,0,0,0,0
