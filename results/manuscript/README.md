@@ -36,7 +36,16 @@ The weak regime uses \(R_A^2=0.01\), \(R_Y^2=0.02\); the strong regime uses \(R_
 
 ## Supplementary tables
 
-Supplementary Tables S1–S6 are the next manuscript-facing outputs to be assembled. Their underlying numerical results are already archived in the robustness and sensitivity-analysis folders under `results/`.
+Supplementary Tables S1–S6 are archived under `supplementary/tables/`:
+
+- `TableS1_AIPW_standard_misspecification.csv`
+- `TableS2_AIPW_strong_misspecification.csv`
+- `TableS3_empirical_residual_sensitivity.csv`
+- `TableS4_phase2_MCAR_sensitivity.csv`
+- `TableS5_FCS_PMM_sensitivity.csv`
+- `TableS6_IPW_weight_capping_sensitivity.csv`
+
+These are compact manuscript-facing tables derived from the canonical robustness and sensitivity summary files retained elsewhere under `results/`.
 
 ## Underlying numerical results
 

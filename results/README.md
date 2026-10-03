@@ -9,7 +9,7 @@ Use `results/manuscript/` for the clean manuscript-facing archive.
 - `results/manuscript/main/figures/` contains Figures 1–6 exactly as referenced in the manuscript.
 - `results/manuscript/main/tables/` contains the data tables used for the MIDUS Results section (Tables 3–4). Tables 1–2 are simulation-design/methods tables embedded directly in the manuscript rather than generated empirical-result tables.
 - `results/manuscript/supplementary/figures/` contains Supplementary Figures S1–S10 exactly as referenced in the manuscript.
-- Supplementary Tables S1–S6 will be assembled from the already archived sensitivity-analysis summaries before the release is frozen.
+- `results/manuscript/supplementary/tables/` contains Supplementary Tables S1–S6 derived from the canonical sensitivity-analysis summaries.
 
 Power is a main-text performance result (Figure 5) and therefore belongs with the other main manuscript figures rather than in a separate supporting folder.
 
