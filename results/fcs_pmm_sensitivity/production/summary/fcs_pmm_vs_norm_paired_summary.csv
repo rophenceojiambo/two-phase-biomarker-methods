@@ -1,0 +1,5 @@
+sensitivity_scenario_id,primary_scenario_id,scenario_label,scenario_key,N,phase2_fraction,r2_a_marker,r2_y_marker,theta_true,n_pairs_total,n_pairs_success,mean_delta_estimate,mcse_mean_delta_estimate,mean_delta_model_se,mean_delta_absolute_error,mean_delta_squared_error,mean_delta_coverage,mean_delta_null_rejection
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,2000,2000,-3.456605002757344e-5,6.156094170265889e-5,-8.203395607821115e-6,1.1985415364307886e-5,-2.1166809283084636e-7,0,0
+2,168,MIDUS-like alternative,midus_alternative,800,0.65,0.05,0.05,0.15,2000,2000,6.308838595467404e-5,6.171650163537562e-5,-2.5593563073606666e-5,4.916563837005801e-5,5.789708046745158e-6,-0.003,NA
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,2000,2000,9.586289679565043e-4,2.9460337621139434e-4,-6.340037915431079e-4,4.17788760926721e-4,4.412857091726146e-5,-0.005,0.005
+4,208,Stress alternative,stress_alternative,500,0.25,0.1,0.1,0.15,2000,2000,0.0011165201251967692,2.8969959722645924e-4,-7.574805392438842e-4,1.7938092167952327e-5,-9.175413505485923e-6,-0.001,NA

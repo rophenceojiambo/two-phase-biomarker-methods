@@ -1,0 +1,5 @@
+sensitivity_scenario_id,primary_scenario_id,scenario_label,scenario_key,N,phase2_fraction,theta_true,method,mean_runtime_seconds,median_runtime_seconds,p95_runtime_seconds,total_cpu_hours
+1,60,MIDUS-like null,midus_null,800,0.65,0,FCS-PMM,6.315805,6.296000000000003,7.683299999999999,3.5087805555555556
+2,168,MIDUS-like alternative,midus_alternative,800,0.65,0.15,FCS-PMM,6.643387000000001,6.475999999999999,8.15425,3.690770555555556
+3,100,Stress null,stress_null,500,0.25,0,FCS-PMM,4.649267,4.6945000000000014,5.57505,2.582926111111111
+4,208,Stress alternative,stress_alternative,500,0.25,0.15,FCS-PMM,4.979684,4.994,5.861000000000001,2.7664911111111112
