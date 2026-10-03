@@ -31,7 +31,7 @@ Key changes:
   Weak, MIDUS-like, and strong auxiliary-information candidate figures.
 
 03_final_manuscript/
-  Intentionally left empty until figures are selected.
+  Parsimonious manuscript-facing selection of core, stress, and supporting figures.
 
 04_diagnostics/
   Redesigned runtime figure; failure rates are stored as data only because all were zero.
