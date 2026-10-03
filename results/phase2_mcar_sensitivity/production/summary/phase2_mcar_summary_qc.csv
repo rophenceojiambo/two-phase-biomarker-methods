@@ -1,0 +1,10 @@
+check,hard_check,passed,overall_summary_pass
+Four MCAR scenarios were summarized,TRUE,TRUE,TRUE
+All 24 scenario-method performance rows are present,TRUE,TRUE,TRUE
+All 12 null-scenario method rows are present,TRUE,TRUE,TRUE
+All key performance summaries are finite,TRUE,TRUE,TRUE
+Matched primary comparison contains 24 rows,TRUE,TRUE,TRUE
+Matched Type I error comparison contains 12 rows,TRUE,TRUE,TRUE
+Matched failure comparison contains 24 rows,TRUE,TRUE,TRUE
+Paired primary comparison contains 24 rows,TRUE,TRUE,TRUE
+Canary and paired Naive reproduction remain verified,TRUE,TRUE,TRUE

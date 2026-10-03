@@ -1,0 +1,7 @@
+method,rows,status_failed,nonfinite_estimate_or_se,invalid_ok_rows,expected_rows,failure_rate
+Naive,648000,0,0,0,648000,0
+CCA,648000,0,0,0,648000,0
+FCS-MI,648000,0,0,0,648000,0
+JM-MI,648000,0,0,0,648000,0
+IPW,648000,0,0,0,648000,0
+AIPW,648000,0,0,0,648000,0

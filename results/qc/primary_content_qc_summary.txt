@@ -1,0 +1,22 @@
+MIDUS TWO-PHASE PRIMARY SIMULATION — CONTENT-LEVEL QC
+QC completed: 2026-08-31 19:51:14.008919
+
+Expected chunk files: 6480
+Chunk files checked: 6480
+Structurally invalid chunks: 0
+Structurally invalid scenarios: 0
+
+Expected result rows: 3,888,000
+Observed result rows: 3,888,000
+Expected RNG rows: 648,000
+Observed RNG rows: 648,000
+
+Method-level issue rows (status failure or non-finite estimate/SE): 0
+Invalid numerical rows among status='ok': 0
+
+STRUCTURAL CONTENT QC: PASS
+NUMERICAL VALIDITY OF status='ok' ROWS: PASS
+
+Note: method-level failures are reported but do not by themselves imply
+structural corruption because method failure rate is a simulation performance
+measure. Inspect primary_content_qc_method_summary.csv before combining.

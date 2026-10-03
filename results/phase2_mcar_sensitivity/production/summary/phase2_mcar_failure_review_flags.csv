@@ -1,0 +1,1 @@
+sensitivity_scenario_id,primary_scenario_id,scenario_label,scenario_key,N,phase2_fraction,r2_a_marker,r2_y_marker,theta_true,selection,marker_error,method,nsim_total,n_failed,failure_rate,mcse_failure,exceeds_prespecified_failure_threshold
