@@ -82,7 +82,7 @@ The full simulation was run on NYU Torch using the SLURM workflow in `hpc/`. Re-
 
 The public results archive contains summarized, disclosure-safe primary simulation results, sensitivity-analysis summaries and QC files, calibration summaries, and aggregate real-world MIDUS outputs. Raw Monte Carlo repetitions, caches, checkpoints, and participant-level data are intentionally excluded.
 
-A parsimonious set of final simulation figures has been archived in `results/figures/03_final_manuscript/`, with the selection rationale documented in that directory. See `results/README.md` for the archival policy and recommended files.
+The final manuscript-facing outputs are organized under `results/manuscript/`. Main-text figures are numbered exactly as Figures 1–6 in the manuscript, and supplementary simulation figures are numbered S1–S10. The underlying machine-readable simulation, sensitivity, QC, and real-world outputs remain in their analysis-specific folders under `results/`. See `results/README.md` for the archive layout.
 
 ## Software
 

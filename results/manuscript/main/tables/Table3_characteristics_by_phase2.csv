@@ -1,0 +1,20 @@
+label,stat_1,stat_2,estimate
+"__Age, years, Mean (SD)__",49.4 (13.5),51.8 (13.3),0.18
+"__Sex, n (%)__",NA,NA,0.06
+Male,124 (46.3),254 (49.0),NA
+Female,144 (53.7),264 (51.0),NA
+"__Race/ethnicity, n (%)__",NA,NA,0.16
+non-Hispanic White,175 (65.3),370 (71.4),NA
+non-Hispanic Black,62 (23.1),88 (17.0),NA
+Other,31 (11.6),60 (11.6),NA
+"__Everyday discrimination, standardized, Mean (SD)__",-0.02 (0.96),0.01 (1.02),0.03
+"__GrimAge2, standardized, Mean (SD)__",-0.11 (1.01),0.06 (0.99),0.16
+"__DunedinPACE, standardized, Mean (SD)__",-0.02 (1.00),0.01 (1.00),0.04
+"__CD19, Mean (SD)__",,3.70 (1.19),NA
+"__CD3D, Mean (SD)__",,5.60 (1.16),NA
+"__CD3E, Mean (SD)__",,5.40 (0.66),NA
+"__CD4, Mean (SD)__",,5.12 (1.00),NA
+"__CD8A, Mean (SD)__",,4.01 (1.23),NA
+"__CD14, Mean (SD)__",,7.07 (1.36),NA
+"__FCGR3A, Mean (SD)__",,5.22 (1.48),NA
+"__NCAM1, Mean (SD)__",,2.85 (1.18),NA
