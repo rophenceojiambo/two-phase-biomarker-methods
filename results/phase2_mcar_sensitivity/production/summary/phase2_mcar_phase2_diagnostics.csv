@@ -1,0 +1,5 @@
+sensitivity_scenario_id,primary_scenario_id,scenario_label,scenario_key,N,phase2_fraction,r2_a_marker,r2_y_marker,theta_true,selection,marker_error,mean_n_phase2,sd_n_phase2,min_n_phase2,max_n_phase2,mean_realized_phase2_fraction,mean_min_pi_true,mean_p01_pi_true,mean_median_pi_true,mean_p99_pi_true,mean_max_pi_true
+1,60,MIDUS-like null,midus_null,800,0.65,0.05,0.05,0,mcar,mvn,520.1125,13.813698015970894,474,575,0.650140625,0.65,0.65,0.65,0.65,0.65
+2,168,MIDUS-like alternative,midus_alternative,800,0.65,0.05,0.05,0.15,mcar,mvn,519.879,13.616169029118092,474,560,0.64984875,0.65,0.65,0.65,0.65,0.65
+3,100,Stress null,stress_null,500,0.25,0.1,0.1,0,mcar,mvn,124.9515,9.397728789617288,92,162,0.24990300000000001,0.25,0.25,0.25,0.25,0.25
+4,208,Stress alternative,stress_alternative,500,0.25,0.1,0.1,0.15,mcar,mvn,125.3125,9.437392433186668,98,158,0.250625,0.25,0.25,0.25,0.25,0.25

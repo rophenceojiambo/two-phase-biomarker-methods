@@ -1,0 +1,6 @@
+PHASE-2 MCAR PRODUCTION SUMMARY: PASS
+Completed: 2026-09-01 16:50:31.31022
+Production scenarios: 4
+Scenario-method performance rows: 24
+Null-scenario method rows: 12
+Failure-rate review flags: 0

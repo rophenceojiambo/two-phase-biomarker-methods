@@ -1,0 +1,9 @@
+setting_id,setting,specification,nsim_total,n_failed,failure_rate,mcse_failure
+1,MIDUS-like,Both correct,2000,0,0,0
+1,MIDUS-like,Selection correct only,2000,0,0,0
+1,MIDUS-like,Augmentation correct only,2000,0,0,0
+1,MIDUS-like,Both misspecified,2000,0,0,0
+2,Stress,Both correct,2000,0,0,0
+2,Stress,Selection correct only,2000,0,0,0
+2,Stress,Augmentation correct only,2000,0,0,0
+2,Stress,Both misspecified,2000,0,0,0
