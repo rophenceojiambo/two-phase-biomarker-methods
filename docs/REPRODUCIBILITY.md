@@ -42,7 +42,7 @@ The simulation creates several classes of files:
 
 Only the compact summaries, QC files supporting the manuscript, and final figure/table products need to be archived publicly. Raw repetition-level objects and caches are regenerable and unnecessarily large.
 
-The primary simulation summaries and manuscript-facing tables are archived under `results/summary/` and `results/tables/`. Sensitivity-analysis summaries and QC outputs are archived under their corresponding subdirectories in `results/`. The complete generated simulation-figure library is represented by machine-readable figure data and a figure manifest; only the exact figures selected for the manuscript should be copied into `results/figures/03_final_manuscript/` for the frozen release.
+The primary simulation summaries and manuscript-facing tables are archived under `results/summary/` and `results/tables/`. Sensitivity-analysis summaries and QC outputs are archived under their corresponding subdirectories in `results/`. The complete generated simulation-figure library is represented by machine-readable figure data and a figure manifest. A parsimonious manuscript-facing selection has been archived in `results/figures/03_final_manuscript/`.
 
 ## Real-world outputs
 
@@ -65,7 +65,6 @@ Completed:
 
 Remaining before creating the manuscript release:
 
-- select and archive the exact primary simulation figures used in the manuscript under `results/figures/03_final_manuscript/`;
 - complete the final disclosure and repository-integrity review, including confirmation that public calibration and aggregate MIDUS outputs comply with applicable MIDUS requirements;
 - regenerate `results/PUBLIC_RESULTS_MANIFEST.csv` after the archive contents are final so its checksums describe the frozen release;
 - update `CITATION.cff` with the final manuscript author list, version, and archival DOI as appropriate;
