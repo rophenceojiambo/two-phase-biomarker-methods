@@ -34,7 +34,7 @@ Raw chunk files, checkpoints, scenario-level RDS files, and rsimsum object files
 
 ## MIDUS real-world application
 
-Aggregate MIDUS outputs remain under `results/real_world_application/`. The exact main-text Figure 6 and data tables used for Tables 3–4 are also copied into `results/manuscript/main/` so that readers can find all manuscript-facing outputs in one place.
+Aggregate MIDUS outputs remain under `results/real_world_application/`. The annotated method-comparison figure used as Figure 6 and the data tables used for Tables 3–4 are also exposed under `results/manuscript/main/` so that readers can find all manuscript-facing outputs in one place. These reader-facing paths intentionally point to the same underlying Git blobs when the files are identical; they do not represent separate analytical results.
 
 Participant-level MIDUS data are not included.
 

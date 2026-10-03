@@ -13,7 +13,7 @@ This directory is the clean reader-facing layer for outputs cited directly in th
 - `main/figures/Figure5_power_MIDUS_like.pdf`
 - `main/figures/Figure6_real_world_method_comparison.pdf`
 
-Figures 1–5 use the MIDUS-like auxiliary-information regime. Figure 6 is the MIDUS Refresher empirical application.
+Figures 1–5 use the MIDUS-like auxiliary-information regime. Figure 6 is the annotated MIDUS Refresher method-comparison figure used in the manuscript.
 
 ### Tables
 
