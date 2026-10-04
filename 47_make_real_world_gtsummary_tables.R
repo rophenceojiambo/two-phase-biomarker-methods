@@ -1,7 +1,7 @@
 ################################################################################
 # 47_make_real_world_gtsummary_tables.R
 #
-# Creates manuscript-ready Word tables for the MIDUS real-world application.
+# Creates manuscript Word tables for the MIDUS real-world application.
 #
 # Outputs:
 #   1. Table 3: Characteristics by Phase-2 RNA-marker availability
