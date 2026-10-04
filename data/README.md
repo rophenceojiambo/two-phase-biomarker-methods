@@ -1,6 +1,6 @@
 # Data
 
-Participant-level MIDUS data are **not included in this repository**.
+Participant-level MIDUS data are not included in this repository.
 
 ## File needed for the MIDUS analysis
 
@@ -10,9 +10,7 @@ Scripts `44`–`48` use the analysis-ready file:
 data/MIDUS_discrimination_analysis.rds
 ```
 
-If the file is stored somewhere else, its location can be supplied with the `SIM_ANALYTIC_RDS` environment variable.
-
-The MIDUS source files, the analysis-ready dataset, participant identifiers, and participant-level intermediate files should stay outside GitHub.
+The file's location can be supplied with the `SIM_ANALYTIC_RDS` environment variable.
 
 This repository includes:
 
@@ -29,7 +27,7 @@ The source data and the resulting participant-level analysis file are not includ
 
 ## Local setup
 
-If you have access to the MIDUS data, the local folder can look like this:
+With access to the MIDUS data, the local folder can look like this:
 
 ```
 data/
