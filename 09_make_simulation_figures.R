@@ -2196,7 +2196,7 @@ cat(
   candidate_root,
   "\n\n",
   
-  "Final manuscript folder (intentionally empty):\n  ",
+  "Manuscript figures used in the paper are stored under results/manuscript/.\n",
   final_root,
   "\n\n",
   
