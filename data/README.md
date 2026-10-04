@@ -1,35 +1,35 @@
 # Data
 
-Participant-level MIDUS data are **not distributed in this public repository**.
+Participant-level MIDUS data are **not included in this repository**.
 
-## Required empirical-analysis input
+## File needed for the MIDUS analysis
 
-Scripts `44`–`48` expect the authorized analysis-ready file:
+Scripts `44`–`48` use the analysis-ready file:
 
 ```
 data/MIDUS_discrimination_analysis.rds
 ```
 
-The location may also be supplied through the `SIM_ANALYTIC_RDS` environment variable where supported.
+If the file is stored somewhere else, its location can be supplied with the `SIM_ANALYTIC_RDS` environment variable.
 
-Restricted source data, the analysis-ready dataset, participant identifiers, participant-level intermediate objects, and restricted metadata must remain outside GitHub.
+The MIDUS source files, the analysis-ready dataset, participant identifiers, and participant-level intermediate files should stay outside GitHub.
 
-The repository may contain:
+This repository includes:
 
-- shareable data-preparation and variable-construction code;
-- simulation scenario definitions;
-- synthetic or simulated example data where appropriate;
-- aggregate disclosure-safe tables, figures, and QC summaries used in the manuscript.
+- the code used to prepare the analysis dataset;
+- simulation settings;
+- summarized simulation results;
+- aggregate MIDUS tables, figures, and QC results used for the paper.
 
-## Data-preparation code
+## Preparing the MIDUS analysis file
 
-The repository includes `prepare_midus_analytic_sample.R`, which documents the construction of `MIDUS_discrimination_analysis.rds` from authorized MIDUS source datasets.
+`prepare_midus_analytic_sample.R` shows how `MIDUS_discrimination_analysis.rds` was created from the MIDUS source files.
 
-The script is shareable, but the source datasets and the resulting participant-level analysis file are restricted and intentionally excluded from Git.
+The source data and the resulting participant-level analysis file are not included.
 
-## Local data layout
+## Local setup
 
-An authorized user can keep the restricted input locally as:
+If you have access to the MIDUS data, the local folder can look like this:
 
 ```
 data/
@@ -37,4 +37,4 @@ data/
 └── README.md
 ```
 
-The root `.gitignore` prevents common restricted-data formats from being committed.
+The root `.gitignore` blocks the common data-file formats used in this project.
