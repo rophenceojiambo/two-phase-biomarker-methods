@@ -1,79 +1,75 @@
-# Reproducibility and archival guide
+# Reproducibility notes
 
-## Purpose
+## What is in this repository
 
-This repository is the code and results archive accompanying the manuscript. The analyses have already been completed; the purpose of the repository is to document the workflow and make the analysis code and allowable derived outputs available to readers.
+This repository contains the code and summarized results used for the manuscript. The analyses have already been completed. These notes show how the pieces of the project fit together and what is needed to rerun them.
 
-## Analysis stages
+## Analysis steps
 
-1. **MIDUS data preparation:** `prepare_midus_analytic_sample.R`
-2. **Configuration and calibration:** `00_config.R`, `01_calibrate_midus.R`
-3. **Primary DGM and methods:** `02_dgm.R`, `03_methods.R`, `04_build_dgm_cache.R`
-4. **Primary simulation:** `05_run_primary_chunk.R` through `09_make_simulation_figures.R`
-5. **Sensitivity analyses:** scripts `10` through `43`
-6. **MIDUS empirical application:** scripts `44` through `48`
-7. **HPC execution and QC:** `hpc/`
-8. **Pre-production variance implementation validation:** `validation/`
+1. **Prepare the MIDUS data:** `prepare_midus_analytic_sample.R`
+2. **Set up and calibrate the simulation:** `00_config.R`, `01_calibrate_midus.R`
+3. **Define the data-generating mechanism and methods:** `02_dgm.R`, `03_methods.R`, `04_build_dgm_cache.R`
+4. **Run and summarize the primary simulation:** `05_run_primary_chunk.R` through `09_make_simulation_figures.R`
+5. **Run the sensitivity analyses:** scripts `10` through `43`
+6. **Run the MIDUS application:** scripts `44` through `48`
+7. **Run jobs on Torch:** `hpc/`
+8. **Check the IPW/AIPW sandwich variance calculations:** `validation/`
 
-## Required private input
+## MIDUS data needed
 
-The empirical application requires the analysis-ready MIDUS file. By default the workflow looks for:
+The MIDUS application uses:
 
 ```
 data/MIDUS_discrimination_analysis.rds
 ```
 
-Authorized users may instead keep the restricted file outside the repository and provide its path through the `SIM_ANALYTIC_RDS` environment variable.
+If you have access to the data and keep the file elsewhere, set its path with `SIM_ANALYTIC_RDS`.
 
-This file is restricted and must remain outside GitHub.
+The MIDUS source data and participant-level analysis file are not included in this repository. `prepare_midus_analytic_sample.R` shows how the analysis file was created.
 
-The public script `prepare_midus_analytic_sample.R` documents how the analysis-ready file is constructed from authorized MIDUS source datasets. Those source datasets remain restricted and are not redistributed in this repository.
+## Simulation results
 
-## Simulation outputs
+The simulation produces several types of files, including intermediate chunks, combined results, summary measures, QC checks, tables, and figures.
 
-The simulation creates several classes of files:
+The files kept in GitHub are the summarized results and QC files needed to understand the paper. Large intermediate chunks, checkpoints, and simulation caches are not included.
 
-- cached DGM objects;
-- repetition/chunk results;
-- combined scenario-level estimates;
-- summarized performance measures;
-- Monte Carlo uncertainty summaries;
-- QC diagnostics;
-- manuscript tables and figures.
+The main primary-simulation summaries are in:
 
-Only the compact summaries, QC files supporting the manuscript, and final figure/table products need to be archived publicly. Raw repetition-level objects and caches are regenerable and unnecessarily large.
+- `results/summary/`
+- `results/tables/`
+- `results/qc/`
+- `results/figure_data/`
 
-The primary simulation summaries remain under `results/summary/` and `results/tables/`. Sensitivity-analysis summaries and QC outputs remain under their corresponding analysis-specific subdirectories in `results/`. A clean reader-facing manuscript layer is archived under `results/manuscript/`: main-text Figures 1–6 and Tables 3–4 are grouped under `main/`, while Supplementary Figures S1–S10 are grouped under `supplementary/`. The complete generated simulation-figure library is represented by machine-readable figure data and the figure manifest.
+Sensitivity-analysis results are kept in their own folders under `results/`.
 
-## Real-world outputs
+Files used directly in the manuscript are collected in `results/manuscript/` so they are easy to find.
 
-Scripts `44`–`48` generate aggregate method estimates, sample summaries, weight diagnostics, manuscript tables, figures, and QC files. Disclosure-safe aggregate outputs are archived under `results/real_world_application/`; participant-level MIDUS data are not included.
+## MIDUS results
 
-## Variance-estimator implementation validation
+Scripts `44`–`48` produce the method estimates, sample summaries, weight checks, tables, and figures for the MIDUS application.
 
-Before the production simulation workflow was frozen, the custom IPW and AIPW stacked-sandwich implementations were checked against numerical finite-difference Jacobians and participant-level nonparametric bootstrap standard errors. The historical validation script and compact outputs are archived under `validation/`.
+The aggregate results are in `results/real_world_application/`. Figure 6 and the data used for Tables 3–4 are also placed in `results/manuscript/main/`.
 
-This material is intentionally separated from the final production simulation results. The final primary simulation summaries under `results/summary/` supersede the earlier 2,000-repetition validation benchmark for manuscript performance estimates.
+Participant-level MIDUS data are not included.
 
-## Software environment
+## Variance checks
 
-The Torch analysis environment used R 4.5.1. Package requirements are listed in `hpc/install_required_packages.R`, and the captured R session and package versions are stored in `sessionInfo.txt`.
+Before the final production simulation, I checked the custom IPW and AIPW sandwich standard errors against:
 
-## Archival status
+- the same estimating equations with a numerical finite-difference Jacobian; and
+- a participant-level nonparametric bootstrap.
 
-Completed:
+The script and compact results are in `validation/`. These checks are separate from the final production simulation. The final simulation results in `results/summary/` are the results used for the manuscript.
 
-- primary simulation summaries and manuscript-facing tables are archived;
-- manuscript-relevant sensitivity summaries and QC files are archived;
-- disclosure-safe aggregate real-world outputs, tables, figures, and QC files are archived;
-- calibration summaries used by the simulation are archived;
-- `sessionInfo.txt` records the analysis software environment;
-- participant-level MIDUS data, raw Monte Carlo chunks, checkpoints, and caches are excluded from the public repository;
-- compact pre-production numerical-Jacobian/bootstrap variance-validation evidence is archived under `validation/`, while repetition-level validation objects are excluded.
+## Software
 
-Remaining before creating the manuscript release:
+The Torch analysis used R 4.5.1. Package requirements are listed in `hpc/install_required_packages.R`, and `sessionInfo.txt` records the R session used for the analysis.
 
-- complete the final disclosure and repository-integrity review, including confirmation that public calibration and aggregate MIDUS outputs comply with applicable MIDUS requirements;
-- regenerate `results/PUBLIC_RESULTS_MANIFEST.csv` after the archive contents are final so its checksums describe the frozen release;
-- update `CITATION.cff` with the final manuscript author list, version, and archival DOI as appropriate;
-- create a versioned GitHub release and archive it with a DOI service such as Zenodo.
+## Before the final release
+
+Remaining steps:
+
+- finish the final repository review;
+- update `results/PUBLIC_RESULTS_MANIFEST.csv` after the result files are final;
+- update `CITATION.cff` with the final citation information and DOI;
+- create the GitHub release and DOI.
