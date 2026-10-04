@@ -13,10 +13,13 @@ repository-code: "https://github.com/rophenceojiambo/two-phase-biomarker-methods
 url: "https://github.com/rophenceojiambo/two-phase-biomarker-methods"
 license: MIT
 keywords:
-  - biostatistics
-  - simulation study
-  - two-phase sampling
+  - incomplete covariates
+  - two-phase design
+  - leukocyte-marker transcripts
   - multiple imputation
+  - fully conditional specification
+  - joint-model imputation
   - inverse probability weighting
   - augmented inverse probability weighting
-  - MIDUS
+  - doubly robust estimation
+  - epigenetic aging
