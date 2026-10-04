@@ -2,8 +2,6 @@
 
 This repository contains the R code and results for a simulation study comparing methods for handling partially observed leukocyte-marker covariates in a two-phase biomarker design, along with an application to MIDUS data.
 
-Participant-level MIDUS data are not included.
-
 ## Methods compared
 
 The simulation compares six approaches:
@@ -99,7 +97,7 @@ The R session used for the analysis is recorded in `sessionInfo.txt`.
 
 ## Citation
 
-Use `CITATION.cff` or GitHub's **Cite this repository** option. Once a DOI is created for the release, it should also be added to the README and `CITATION.cff`.
+Use `CITATION.cff` or GitHub's **Cite this repository** option.
 
 ## License
 
