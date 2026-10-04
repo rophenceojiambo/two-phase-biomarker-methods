@@ -11,7 +11,7 @@ renv/staging/
 renv/local/
 renv/cellar/
 
-# Restricted or participant-level data
+# Restricted or participant-level MIDUS data
 data/raw/
 data/private/
 data/processed/
