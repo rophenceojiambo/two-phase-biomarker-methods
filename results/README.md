@@ -1,6 +1,6 @@
 # Results
 
-This folder contains the summarized results from the simulation study, sensitivity analyses, and MIDUS application.
+This folder contains the summarized results from the simulation study, sensitivity analyses, and MIDUS Data application.
 
 ## Files used in the manuscript
 
@@ -27,7 +27,7 @@ The detailed primary-simulation summaries are kept in:
 - `results/qc/`
 - `results/figure_data/`
 
-These files contain the performance summaries, Type I error, failures, runtime, Phase-2 summaries, weight checks, and the data used to make the figures.
+These files contain the performance summaries, failures, runtime, Phase-2 summaries, weight checks, and the data used to make the figures.
 
 ## Sensitivity analyses
 
@@ -48,4 +48,4 @@ Aggregate MIDUS results are in `results/real_world_application/`.
 
 ## Results manifest
 
-`RESULTS_MANIFEST.csv` lists the files included under `results/`, together with file sizes and SHA-256 checksums for integrity checks.
+`RESULTS_MANIFEST.csv` lists all the files included under `results/`, together with file sizes and SHA-256 checksums for integrity checks.
