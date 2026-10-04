@@ -51,6 +51,10 @@ The annotated figure used as Figure 6 and the data used for Tables 3–4 are als
 
 Participant-level MIDUS data are not included.
 
+## Results manifest
+
+`RESULTS_MANIFEST.csv` lists the files included under `results/` (excluding the manifest itself), together with file sizes and SHA-256 checksums for integrity checks.
+
 ## Files that should stay out of GitHub
 
 Do not add:
