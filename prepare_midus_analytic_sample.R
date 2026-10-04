@@ -217,7 +217,7 @@ dnam <- dna %>%
 # ==============================================================================
 
 # BMI is taken from the biomarker examination.
-# Age is intentionally not taken from Project 4.
+# Age is not taken from Project 4.
 
 p4_vars <- p4 %>%
   transmute(
@@ -361,8 +361,8 @@ df_analytic <- dnam %>%
 # 10. PHASE-1 VARIABLE MISSINGNESS
 # ==============================================================================
 
-# RNA markers are intentionally excluded from this table because their
-# missingness is the two-phase problem of interest.
+# RNA markers are excluded from this table because their missingness is the
+# two-phase problem of interest.
 
 phase1_missingness <- df_analytic %>%
   summarise(
@@ -384,7 +384,7 @@ print(phase1_missingness)
 # The methodological problem concerns missing RNA covariates.
 #
 # Therefore, the exposure, outcomes, and Phase-1 covariates are required
-# to be observed. RNA markers are intentionally NOT included in this filter.
+# to be observed. RNA markers are not included in this filter.
 #
 # Continuous variables are standardized after defining the final analytic
 # sample so that all scaling constants correspond to the same target sample.
@@ -402,8 +402,8 @@ df_discrimination <- df_analytic %>%
 
 # Helper function for z-standardization.
 #
-# na.rm = TRUE is important for the RNA markers because they are observed
-# only in the Phase-2 subset. Missing RNA values remain NA.
+# Use na.rm = TRUE for the RNA markers because they are observed only in the
+# Phase-2 subset. Missing RNA values remain NA.
 
 standardize <- function(x) {
   (x - mean(x, na.rm = TRUE)) / sd(x, na.rm = TRUE)

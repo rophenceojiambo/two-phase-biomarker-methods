@@ -27,7 +27,7 @@
 #   5. IPW
 #   6. AIPW
 #
-# IMPORTANT:
+# Analysis specification:
 #   - BMI is not used.
 #   - DNAm plate and RNA plate are not used.
 #   - The script uses the validated 03_methods.R implementation, so the real-data

@@ -253,9 +253,9 @@ docx_nonempty <- all(
 # ------------------------------------------------------------------
 # Use the saved gtsummary table bodies for structural QC.
 #
-# This is intentionally more robust than checking the exported CSV column
-# headers because gtsummary::as_tibble() may retain raw names such as `label`
-# rather than the display header "Outcome" used in the manuscript.
+# Use the saved gtsummary table bodies rather than exported CSV headers because
+# gtsummary::as_tibble() may retain raw names such as `label` instead of the
+# display header "Outcome" used in the manuscript.
 # ------------------------------------------------------------------
 
 table4a_body_qc <- if (

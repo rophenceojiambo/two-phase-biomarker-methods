@@ -69,7 +69,7 @@ if (!file.exists(calibration_rds)) {
 
 calibration <- readRDS(calibration_rds)
 
-# We focus on the setting where the variance problem was clearest.
+# The stress setting is used because the variance discrepancy was clearest there.
 scenario <- list(
   name = "Stress",
   N = 500L,

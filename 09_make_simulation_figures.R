@@ -21,11 +21,9 @@
 #   6. Uses plotmath labels plus cairo_pdf so theta and phi_2 render correctly
 #      in PDF files.
 #
-# IMPORTANT
+# Execution
 # ---------
-# Run this script from the ROOT of the transferred project:
-#
-#   midus_two_phase_sim/
+# Run this script from the repository root.
 #
 # Example:
 #   source("09_make_simulation_figures.R")
@@ -334,7 +332,7 @@ theta_labeller <- as_labeller(
 # ==============================================================================
 # 8. FIGURE THEME
 #
-# Important:
+# Figure styling:
 #   - white background
 #   - gray strip headers
 #   - no panel grid
@@ -769,8 +767,8 @@ apply_metric_axis <- function(
   
   
   # Relative precision has a much wider observed range, including negative
-  # values and values >400%. It remains available but is intentionally not
-  # forced into an artificially narrow fixed scale.
+  # values and values >400%, so it is not constrained to the fixed scales used
+  # for the other performance measures.
   if (metric == "relative_precision") {
     
     p <- p +

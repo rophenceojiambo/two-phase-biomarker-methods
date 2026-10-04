@@ -4,7 +4,8 @@
 # Creates manuscript-ready tables and figures for the MIDUS real-world
 # application using the already-completed six-method analysis from Script 44.
 #
-# This script DOES NOT rerun multiple imputation, IPW, or AIPW.
+# This script uses the saved results from Script 44 and does not rerun multiple
+# imputation, IPW, or AIPW.
 ################################################################################
 
 library(dplyr)
@@ -349,8 +350,8 @@ write_csv(
 # ------------------------------------------------------------------------------
 # 5A. Primary coefficient / confidence-interval figure
 #
-# This is the original simple side-by-side figure that matches the simulation
-# visual grammar. It is retained as the main figure for direct comparison.
+# This unannotated side-by-side version follows the simulation figure style.
+# The annotated version below is used as Figure 6 in the manuscript.
 # ------------------------------------------------------------------------------
 
 plot_data_simple <- results %>%
@@ -511,13 +512,12 @@ save_figure(
 # ------------------------------------------------------------------------------
 # 5B. Annotated side-by-side forest figure
 #
-# This is a SECOND, distinct figure. It preserves the same side-by-side
-# simulation-style appearance while adding the numerical adjusted coefficient
-# (95% CI) and P value within each outcome panel.
+# This version adds the adjusted coefficient (95% CI) and P value within each
+# outcome panel and is used as Figure 6 in the manuscript.
 #
-# IMPORTANT:
-#   Figure_real_world_method_comparison.*                  = SIMPLE figure
-#   Figure_real_world_method_comparison_with_annotations.* = ANNOTATED figure
+# Output files:
+#   Figure_real_world_method_comparison.*                  = unannotated figure
+#   Figure_real_world_method_comparison_with_annotations.* = annotated Figure 6
 # ------------------------------------------------------------------------------
 
 if (!requireNamespace("patchwork", quietly = TRUE)) {

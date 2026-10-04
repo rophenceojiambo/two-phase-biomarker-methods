@@ -708,7 +708,7 @@ stars_mat[
 ] <- "***"
 
 # Display only the strict lower triangle. The diagonal and upper triangle are
-# intentionally blank because they contain redundant information.
+# left blank because they contain redundant information.
 corr_text_mat <- matrix(
   "",
   nrow = nrow(r_mat),
