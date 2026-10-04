@@ -48,4 +48,4 @@ Aggregate MIDUS results are in `results/real_world_application/`.
 
 ## Results manifest
 
-`RESULTS_MANIFEST.csv` lists the files included under `results/` 
+`RESULTS_MANIFEST.csv` lists the files included under `results/`, together with file sizes and SHA-256 checksums for integrity checks.
