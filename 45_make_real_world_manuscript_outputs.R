@@ -1,7 +1,7 @@
 ################################################################################
 # 45_make_real_world_manuscript_outputs.R
 #
-# Creates manuscript-ready tables and figures for the MIDUS real-world
+# Creates manuscriptMtables and figures for the MIDUS real-world
 # application using the already-completed six-method analysis from Script 44.
 #
 # This script uses the saved results from Script 44 and does not rerun multiple
@@ -286,7 +286,7 @@ save_figure <- function(
 }
 
 # ------------------------------------------------------------------------------
-# 4. Manuscript-ready numeric table
+# 4. Manuscript numeric table
 # ------------------------------------------------------------------------------
 
 format_p <- function(p) {
@@ -326,7 +326,7 @@ write_csv(
   )
 )
 
-# A second machine-readable table keeps unrounded values.
+# A second table keeps unrounded values.
 write_csv(
   results %>%
     select(
