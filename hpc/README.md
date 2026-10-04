@@ -1,54 +1,56 @@
 # HPC / Torch workflow
 
-This directory contains the SLURM submission scripts and orchestration code used to run the simulation study on NYU Torch.
+This folder contains the SLURM scripts used to run the simulation study on NYU Torch.
 
-## Environment
+## Setup
 
-Run commands from the repository root and set the site-specific Slurm account explicitly:
+Run commands from the repository root and set the Torch Slurm account:
 
 ```bash
 export SIM_PROJECT_DIR=$PWD
 export SLURM_ACCOUNT=<your-torch-slurm-account>
 ```
 
-The scripts default to the Torch R module `r/4.5.1` and use the user's scratch area for the R library and temporary files. These defaults can be overridden with `R_MODULE`, `R_LIBS_USER`, and `TMPDIR`.
+The scripts use the Torch R module `r/4.5.1` by default and use scratch space for the R library and temporary files. These settings can be changed with `R_MODULE`, `R_LIBS_USER`, and `TMPDIR`.
 
-The analysis-ready MIDUS file is not stored in Git. By default, the workflow expects:
+The MIDUS analysis file is not included. By default, the scripts look for:
 
 ```
 data/MIDUS_discrimination_analysis.rds
 ```
 
-An authorized alternate location may be supplied with `SIM_ANALYTIC_RDS`.
+If the file is stored elsewhere, set `SIM_ANALYTIC_RDS`.
 
-## Clean-rerun sequence
+## Running the workflow again
 
-A new reproducibility run should proceed in stages rather than submitting the full simulation immediately:
+Run the workflow in stages:
 
 1. `bash hpc/preflight_rerun.sh`
 2. `bash hpc/setup_project.sh`
-3. Install/verify required R packages on a compute node using `hpc/install_required_packages.R`.
+3. Install/check the required R packages on a compute node with `hpc/install_required_packages.R`.
 4. `bash hpc/submit_calibrate.sh`
 5. `bash hpc/submit_smoke.sh`
 6. `bash hpc/submit_cache.sh`
 7. `bash hpc/submit_primary.sh`
-8. Check/resubmit incomplete primary tasks if necessary using `hpc/resubmit_missing.sh`.
+8. Check for incomplete primary tasks and resubmit them if needed with `hpc/resubmit_missing.sh`.
 9. `bash hpc/submit_postprocess.sh`
-10. Run the prespecified sensitivity analyses and their canary/QC steps in the documented dependency order.
+10. Run the sensitivity analyses in their documented order, including the canary/QC checks.
 
-Do not advance past a canary, cache, combination, or summary stage unless its corresponding PASS/QC checks succeed.
+Do not move to the next stage if a required canary, cache, combination, summary, or PASS/QC check fails.
 
-## Output policy
+## Files saved to GitHub
 
-HPC logs, temporary files, checkpoints, chunk-level results, and participant-level data are not intended for GitHub. Production outputs should first be combined and summarized; only disclosure-safe manuscript-facing summaries, tables, figures, and QC outputs should be considered for the public repository.
+SLURM logs, temporary files, checkpoints, chunk-level simulation results, and participant-level MIDUS data are not included.
 
-## Reproducibility safeguards
+After jobs finish, the combined and summarized results used for the paper can be added to `results/`.
 
-The scripts are designed to:
+## Reproducibility checks
+
+The HPC scripts:
 
 - use the repository root as the project directory;
-- avoid user-specific hard-coded absolute paths;
+- avoid hard-coded personal paths;
 - pass project paths through environment variables;
-- keep R package and temporary storage in scratch;
-- preserve the simulation random-number workflow;
-- validate expected files and PASS markers before downstream production stages.
+- use scratch space for R packages and temporary files;
+- preserve the simulation random-number setup;
+- check required files and PASS markers before later jobs run.
