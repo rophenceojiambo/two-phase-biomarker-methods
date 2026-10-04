@@ -1,4 +1,4 @@
-# Two-Phase Biomarker Methods
+# Comparing Methods for Partially Observed Leukocyte Covariates in a Two-Phase Biomarker Study
 
 This repository contains the R code and results for a simulation study comparing methods for handling partially observed leukocyte-marker covariates in a two-phase biomarker design, along with an application to MIDUS data.
 

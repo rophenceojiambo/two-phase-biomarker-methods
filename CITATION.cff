@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the accompanying manuscript and this software repository."
-title: "Two-Phase Biomarker Methods: Simulation and MIDUS Application"
+title: "Comparing Methods for Partially Observed Leukocyte Covariates in a Two-Phase Biomarker Study"
 type: software
 authors:
   - family-names: "Ojiambo"
