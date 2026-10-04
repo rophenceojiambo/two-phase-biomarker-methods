@@ -1,5 +1,5 @@
 # Documentation
 
-This directory contains repository-level reproducibility documentation.
+This folder contains notes on how the analysis is organized and what is needed to reproduce it.
 
-- `REPRODUCIBILITY.md` describes the analysis stages, required inputs, generated outputs, and what should be included in the public manuscript archive.
+- `REPRODUCIBILITY.md` describes the analysis steps, MIDUS input file, saved results, validation checks, and software setup.
