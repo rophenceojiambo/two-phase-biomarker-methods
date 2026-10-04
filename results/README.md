@@ -1,45 +1,65 @@
-# Results archive
+# Results
 
-This directory contains disclosure-safe outputs from the completed analyses.
+This folder contains the summarized results from the simulation study, sensitivity analyses, and MIDUS application.
 
-## Reader-facing manuscript outputs
+## Files used in the manuscript
 
-Use `results/manuscript/` for the clean manuscript-facing archive.
+The easiest place to find the figures and tables used in the paper is:
 
-- `results/manuscript/main/figures/` contains Figures 1–6 exactly as referenced in the manuscript.
-- `results/manuscript/main/tables/` contains the data tables used for the MIDUS Results section (Tables 3–4). Tables 1–2 are simulation-design/methods tables embedded directly in the manuscript rather than generated empirical-result tables.
-- `results/manuscript/supplementary/figures/` contains Supplementary Figures S1–S10 exactly as referenced in the manuscript.
-- `results/manuscript/supplementary/tables/` contains Supplementary Tables S1–S6 derived from the canonical sensitivity-analysis summaries.
+```
+results/manuscript/
+```
 
-Power is a main-text performance result (Figure 5) and therefore belongs with the other main manuscript figures rather than in a separate supporting folder.
+It contains:
 
-## Machine-readable primary simulation outputs
+- `main/figures/` — Figures 1–6
+- `main/tables/` — data used for Tables 3–4
+- `supplementary/figures/` — Supplementary Figures S1–S10
+- `supplementary/tables/` — Supplementary Tables S1–S6
 
-The primary simulation summaries remain under `results/summary/`, with manuscript-oriented summary tables under `results/tables/`, QC under `results/qc/`, and figure metadata under `results/figure_data/`.
+Power is Figure 5 in the main text, so it is stored with the other main simulation figures.
 
-These include the primary performance, Type I error, failure, runtime, Phase-2, and weight-diagnostic summaries needed to reproduce the manuscript displays.
+## Primary simulation results
 
-## Sensitivity and robustness outputs
+The detailed primary-simulation summaries are kept in:
 
-The full numerical outputs supporting Supplementary Tables S1–S6 remain in their analysis-specific directories:
+- `results/summary/`
+- `results/tables/`
+- `results/qc/`
+- `results/figure_data/`
+
+These files contain the performance summaries, Type I error, failures, runtime, Phase-2 summaries, weight checks, and the data used to make the figures.
+
+## Sensitivity analyses
+
+The detailed sensitivity results are kept in their own folders:
 
 - AIPW robustness: `results/robustness/aipw_double_robustness/`
-- Strong AIPW misspecification: `results/sensitivity/aipw_strong_misspecification/`
-- Empirical-residual sensitivity: `results/empirical_residual_sensitivity/`
-- Phase-2 MCAR sensitivity: `results/phase2_mcar_sensitivity/`
-- FCS predictive mean matching sensitivity: `results/fcs_pmm_sensitivity/`
-- IPW weight-capping sensitivity: `results/ipw_weight_capping_sensitivity/`
+- Stronger AIPW misspecification: `results/sensitivity/aipw_strong_misspecification/`
+- Empirical residuals: `results/empirical_residual_sensitivity/`
+- Phase-2 MCAR: `results/phase2_mcar_sensitivity/`
+- FCS predictive mean matching: `results/fcs_pmm_sensitivity/`
+- IPW weight capping: `results/ipw_weight_capping_sensitivity/`
 
-Raw chunk files, checkpoints, scenario-level RDS files, and rsimsum object files are intentionally excluded.
+Large chunk files, checkpoints, and scenario-level RDS files are not included.
 
-## MIDUS real-world application
+## MIDUS application
 
-Aggregate MIDUS outputs remain under `results/real_world_application/`. The annotated method-comparison figure used as Figure 6 and the data tables used for Tables 3–4 are also exposed under `results/manuscript/main/` so that readers can find all manuscript-facing outputs in one place. These reader-facing paths intentionally point to the same underlying Git blobs when the files are identical; they do not represent separate analytical results.
+Aggregate MIDUS results are in `results/real_world_application/`.
+
+The annotated figure used as Figure 6 and the data used for Tables 3–4 are also placed in `results/manuscript/main/` so the manuscript files are easy to find. In cases where the same file appears in both places, it is the same result saved under the manuscript organization as well.
 
 Participant-level MIDUS data are not included.
 
-## Do not archive
+## Files that should stay out of GitHub
 
-Do not commit raw or analysis-ready participant-level MIDUS data, identifiers, participant-level intermediate exports, raw Monte Carlo chunk files, checkpoints, cached simulated datasets, or SLURM scratch/log files.
+Do not add:
 
-The repository `.gitignore` blocks the most common restricted and regenerable file types.
+- raw or analysis-ready participant-level MIDUS data;
+- participant identifiers;
+- participant-level intermediate exports;
+- raw Monte Carlo chunk files;
+- checkpoints and simulation caches;
+- SLURM scratch files and logs.
+
+The root `.gitignore` blocks the common file types used for these files.
