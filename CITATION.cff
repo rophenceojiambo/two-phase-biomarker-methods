@@ -7,6 +7,8 @@ date-released: 2026-10-04
 authors:
   - family-names: "Ojiambo"
     given-names: "Rophence"
+  - family-names: "Bather"
+    given-names: "Jemar R."
 repository-code: "https://github.com/rophenceojiambo/two-phase-biomarker-methods"
 url: "https://github.com/rophenceojiambo/two-phase-biomarker-methods"
 license: MIT
