@@ -1,10 +1,10 @@
 ################################################################################
-# 10_verify_sandwich_bootstrap.R
+# verify_sandwich_bootstrap.R
 #
-# NEXT DIAGNOSTIC BEFORE FREEZING THE PRODUCTION SIMULATION
+# SANDWICH VARIANCE CHECK
 #
-# Goal:
-#   Determine WHY IPW and AIPW standard errors were too small in the stress
+# Purpose:
+#   Check the IPW and AIPW sandwich variance calculations in the stress
 #   scenario.
 #
 # This script compares, on the SAME simulated datasets:
@@ -998,3 +998,300 @@ for (i in seq_len(verification_nsim)) {
   )
 
   boot_ipw <- bootstrap_method_se(
+    dat = dat_i,
+    marker_names = calibration$marker_names,
+    method = "IPW",
+    B = bootstrap_B
+  )
+
+  cat(
+    "  AIPW bootstrap (",
+    bootstrap_B,
+    ")...\n",
+    sep = ""
+  )
+
+  boot_aipw <- bootstrap_method_se(
+    dat = dat_i,
+    marker_names = calibration$marker_names,
+    method = "AIPW",
+    B = bootstrap_B
+  )
+
+  # ---------------------------------------------------------------------------
+  # Store
+  # ---------------------------------------------------------------------------
+
+  results[[z]] <- data.frame(
+    repetition = i,
+    method = "IPW",
+    theta_true = scenario$theta,
+    n_phase2 = sum(
+      dat_i$phase2
+    ),
+    analytic_estimate =
+      current_ipw$estimate,
+    analytic_se =
+      current_ipw$se,
+    numerical_estimate =
+      num_ipw$estimate,
+    numerical_se =
+      num_ipw$numerical_se,
+    bootstrap_se =
+      boot_ipw$bootstrap_se,
+    bootstrap_success =
+      boot_ipw$bootstrap_success,
+    bootstrap_failure =
+      boot_ipw$bootstrap_failure,
+    numerical_root_check =
+      num_ipw$root_check,
+    parameter_count =
+      num_ipw$parameter_count
+  )
+
+  z <- z + 1L
+
+  results[[z]] <- data.frame(
+    repetition = i,
+    method = "AIPW",
+    theta_true = scenario$theta,
+    n_phase2 = sum(
+      dat_i$phase2
+    ),
+    analytic_estimate =
+      current_aipw$estimate,
+    analytic_se =
+      current_aipw$se,
+    numerical_estimate =
+      num_aipw$estimate,
+    numerical_se =
+      num_aipw$numerical_se,
+    bootstrap_se =
+      boot_aipw$bootstrap_se,
+    bootstrap_success =
+      boot_aipw$bootstrap_success,
+    bootstrap_failure =
+      boot_aipw$bootstrap_failure,
+    numerical_root_check =
+      num_aipw$root_check,
+    parameter_count =
+      num_aipw$parameter_count
+  )
+
+  z <- z + 1L
+
+  # Checkpoint after every dataset.
+  partial <- bind_rows(
+    results[
+      seq_len(z - 1L)
+    ]
+  )
+
+  saveRDS(
+    partial,
+    file.path(
+      verification_dir,
+      "sandwich_bootstrap_verification_checkpoint.rds"
+    )
+  )
+}
+
+verification_results <- bind_rows(
+  results
+)
+
+write_csv(
+  verification_results,
+  file.path(
+    verification_dir,
+    "sandwich_bootstrap_verification_results.csv"
+  )
+)
+
+saveRDS(
+  verification_results,
+  file.path(
+    verification_dir,
+    "sandwich_bootstrap_verification_results.rds"
+  )
+)
+
+# ==============================================================================
+# 9. SUMMARY
+# ==============================================================================
+
+verification_summary <- verification_results %>%
+  group_by(
+    method
+  ) %>%
+  summarise(
+    n_datasets = n(),
+
+    mean_n_phase2 =
+      mean(
+        n_phase2
+      ),
+
+    max_abs_estimate_difference =
+      max(
+        abs(
+          analytic_estimate -
+            numerical_estimate
+        )
+      ),
+
+    mean_analytic_se =
+      mean(
+        analytic_se
+      ),
+
+    mean_numerical_se =
+      mean(
+        numerical_se
+      ),
+
+    mean_bootstrap_se =
+      mean(
+        bootstrap_se,
+        na.rm = TRUE
+      ),
+
+    mean_analytic_to_numerical_ratio =
+      mean(
+        analytic_se /
+          numerical_se
+      ),
+
+    min_analytic_to_numerical_ratio =
+      min(
+        analytic_se /
+          numerical_se
+      ),
+
+    max_analytic_to_numerical_ratio =
+      max(
+        analytic_se /
+          numerical_se
+      ),
+
+    mean_bootstrap_to_analytic_ratio =
+      mean(
+        bootstrap_se /
+          analytic_se,
+        na.rm = TRUE
+      ),
+
+    mean_bootstrap_to_numerical_ratio =
+      mean(
+        bootstrap_se /
+          numerical_se,
+        na.rm = TRUE
+      ),
+
+    max_numerical_root_check =
+      max(
+        numerical_root_check
+      ),
+
+    bootstrap_failures =
+      sum(
+        bootstrap_failure
+      ),
+
+    .groups = "drop"
+  )
+
+# ==============================================================================
+# 10. ADD THE 2,000-REPETITION EMPIRICAL-SE BENCHMARK IF AVAILABLE
+# ==============================================================================
+
+validation_summary_file <- file.path(
+  simulation_dir,
+  "variance_validation_2000",
+  "variance_validation_performance_summary.csv"
+)
+
+if (
+  file.exists(
+    validation_summary_file
+  )
+) {
+
+  validation_benchmark <- read_csv(
+    validation_summary_file,
+    show_col_types = FALSE
+  ) %>%
+    filter(
+      scenario == "Stress",
+      method %in% c(
+        "IPW",
+        "AIPW"
+      )
+    ) %>%
+    select(
+      method,
+      validation_empse = empse,
+      validation_modse = modse,
+      validation_se_ratio = se_ratio,
+      validation_coverage = coverage
+    )
+
+  verification_summary <- verification_summary %>%
+    left_join(
+      validation_benchmark,
+      by = "method"
+    ) %>%
+    mutate(
+      bootstrap_to_validation_empse =
+        mean_bootstrap_se /
+          validation_empse,
+      numerical_to_validation_empse =
+        mean_numerical_se /
+          validation_empse,
+      analytic_to_validation_empse =
+        mean_analytic_se /
+          validation_empse
+    )
+}
+
+write_csv(
+  verification_summary,
+  file.path(
+    verification_dir,
+    "sandwich_bootstrap_verification_summary.csv"
+  )
+)
+
+# ==============================================================================
+# 11. PRINT
+# ==============================================================================
+
+cat(
+  "\n\n================ VERIFICATION SUMMARY ================\n"
+)
+
+print(
+  verification_summary,
+  n = Inf,
+  width = Inf
+)
+
+cat(
+  "\n\nInterpretation guide:\n",
+  "1. mean_analytic_to_numerical_ratio should be very close to 1.\n",
+  "2. max_abs_estimate_difference should be essentially 0.\n",
+  "3. max_numerical_root_check should be close to 0.\n",
+  "4. Compare mean_bootstrap_se with validation_empse.\n",
+  "\nUpload these two files next:\n",
+  file.path(
+    verification_dir,
+    "sandwich_bootstrap_verification_summary.csv"
+  ),
+  "\n",
+  file.path(
+    verification_dir,
+    "sandwich_bootstrap_verification_results.csv"
+  ),
+  "\n",
+  sep = ""
+)
