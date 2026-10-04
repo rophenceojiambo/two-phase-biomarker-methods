@@ -1,7 +1,7 @@
-# Validation result files
+# Variance-validation results
 
-These are compact pre-production validation outputs.
+These files summarize the variance checks completed before the final production simulation.
 
-The canonical final simulation results remain under `../../results/`. Files in this directory support the implementation-validation record for the custom IPW/AIPW stacked-sandwich variance estimators and should not be used as replacements for final production performance estimates.
+The final simulation results used in the manuscript are in `../../results/`. The files here are only for checking the IPW/AIPW sandwich variance calculations.
 
-See `../README.md` for the interpretation and archival policy.
+See `../README.md` for details.
