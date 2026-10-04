@@ -105,4 +105,4 @@ The code is released under the MIT License. The license does not apply to MIDUS 
 
 ## Current status
 
-The repository review is complete. The analysis code, summarized results, manuscript figures and tables, MIDUS preparation code, software information, variance-validation checks, and results manifest are included. The repository is ready for a v1.0.0 release. After a DOI is created for the release, the DOI should be added to the README and `CITATION.cff`.
+The repository contains the analysis code, summarized results, manuscript figures and tables, MIDUS analytic-sample preparation code, software information, variance-estimator validation materials, and results manifest accompanying the manuscript.
