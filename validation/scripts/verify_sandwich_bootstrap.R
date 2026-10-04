@@ -1,7 +1,6 @@
 ################################################################################
 # verify_sandwich_bootstrap.R
 #
-# SANDWICH VARIANCE CHECK
 #
 # Purpose:
 #   Check the IPW and AIPW sandwich variance calculations in the stress
