@@ -1,12 +1,12 @@
 # Variance validation
 
-This folder contains checks I ran before the final production simulation to make sure the custom IPW and AIPW sandwich variance calculations were working as intended.
+This folder contains checks completed before the final production simulation to verify the custom IPW and AIPW sandwich variance calculations.
 
 These checks are separate from the final simulation results.
 
-## What I checked
+## Checks performed
 
-For the same simulated datasets, I compared:
+For the same simulated datasets, the following were compared:
 
 1. the analytic stacked-sandwich standard error used in the main methods;
 2. the same stacked estimating equations with a numerical finite-difference Jacobian; and
@@ -57,7 +57,7 @@ This is the diagnostic script that was used before the final production simulati
 
 ## Files not included
 
-I did not include the checkpoint files, RDS copies, or the large repetition-level validation files. The summary files above contain what is needed to understand the validation check.
+Checkpoint files, RDS copies, and the large repetition-level validation files are not included. The summary files above contain what is needed to understand the validation check.
 
 ## Relation to the final simulation
 
