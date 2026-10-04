@@ -265,7 +265,7 @@ rY_levels <- sort(
 
 
 # ==============================================================================
-# 7. PLOT-SAFE DESIGN LABELS
+# 7. PLOT DESIGN LABELS
 #
 # N is treated as a DESIGN FACTOR rather than a continuous numerical x-axis.
 # This makes 500, 800, and 1,500 equally spaced, as in a factorial simulation
