@@ -17,7 +17,6 @@ It contains:
 - `supplementary/figures/` — Supplementary Figures S1–S10
 - `supplementary/tables/` — Supplementary Tables S1–S6
 
-Power is Figure 5 in the main text, so it is stored with the other main simulation figures.
 
 ## Primary simulation results
 
@@ -47,23 +46,6 @@ Large chunk files, checkpoints, and scenario-level RDS files are not included.
 
 Aggregate MIDUS results are in `results/real_world_application/`.
 
-The annotated figure used as Figure 6 and the data used for Tables 3–4 are also placed in `results/manuscript/main/` so the manuscript files are easy to find. In cases where the same file appears in both places, it is the same result saved under the manuscript organization as well.
-
-Participant-level MIDUS data are not included.
-
 ## Results manifest
 
-`RESULTS_MANIFEST.csv` lists the files included under `results/` (excluding the manifest itself), together with file sizes and SHA-256 checksums for integrity checks.
-
-## Files that should stay out of GitHub
-
-Do not add:
-
-- raw or analysis-ready participant-level MIDUS data;
-- participant identifiers;
-- participant-level intermediate exports;
-- raw Monte Carlo chunk files;
-- checkpoints and simulation caches;
-- SLURM scratch files and logs.
-
-The root `.gitignore` blocks the common file types used for these files.
+`RESULTS_MANIFEST.csv` lists the files included under `results/` 
