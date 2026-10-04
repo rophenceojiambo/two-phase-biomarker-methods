@@ -51,6 +51,7 @@ The validated analysis scripts are intentionally retained at the repository root
 - `data/` — data-access documentation only; restricted MIDUS data are excluded
 - `results/` — disclosure-safe manuscript-facing results to be archived with the paper
 - `docs/` — reproducibility notes and repository guidance
+- `validation/` — pre-production implementation validation of the IPW/AIPW stacked-sandwich variance estimators
 
 ## MIDUS empirical application
 
@@ -100,4 +101,4 @@ The source code is released under the MIT License. This license applies to the r
 
 ## Repository status
 
-The cleaned analysis and HPC code, shareable MIDUS preparation script, software-environment record, disclosure-safe primary simulation summaries, sensitivity-analysis results, calibration summaries, and aggregate real-world manuscript outputs are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to complete the final disclosure and integrity review, update citation metadata as appropriate, regenerate the public-results manifest for the frozen archive, and create the tagged archival release.
+The cleaned analysis and HPC code, shareable MIDUS preparation script, software-environment record, disclosure-safe primary simulation summaries, sensitivity-analysis results, calibration summaries, aggregate real-world manuscript outputs, and pre-production IPW/AIPW variance-validation evidence are archived. Before the manuscript repository is frozen as a versioned release, the remaining tasks are to complete the final disclosure and integrity review, update citation metadata as appropriate, regenerate the public-results manifest for the frozen archive, and create the tagged archival release.
