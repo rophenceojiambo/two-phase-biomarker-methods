@@ -1276,22 +1276,3 @@ print(
   width = Inf
 )
 
-cat(
-  "\n\nInterpretation guide:\n",
-  "1. mean_analytic_to_numerical_ratio should be very close to 1.\n",
-  "2. max_abs_estimate_difference should be essentially 0.\n",
-  "3. max_numerical_root_check should be close to 0.\n",
-  "4. Compare mean_bootstrap_se with validation_empse.\n",
-  "\nUpload these two files next:\n",
-  file.path(
-    verification_dir,
-    "sandwich_bootstrap_verification_summary.csv"
-  ),
-  "\n",
-  file.path(
-    verification_dir,
-    "sandwich_bootstrap_verification_results.csv"
-  ),
-  "\n",
-  sep = ""
-)
