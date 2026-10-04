@@ -13,6 +13,7 @@ This repository is the code and results archive accompanying the manuscript. The
 5. **Sensitivity analyses:** scripts `10` through `43`
 6. **MIDUS empirical application:** scripts `44` through `48`
 7. **HPC execution and QC:** `hpc/`
+8. **Pre-production variance implementation validation:** `validation/`
 
 ## Required private input
 
@@ -48,6 +49,12 @@ The primary simulation summaries remain under `results/summary/` and `results/ta
 
 Scripts `44`–`48` generate aggregate method estimates, sample summaries, weight diagnostics, manuscript tables, figures, and QC files. Disclosure-safe aggregate outputs are archived under `results/real_world_application/`; participant-level MIDUS data are not included.
 
+## Variance-estimator implementation validation
+
+Before the production simulation workflow was frozen, the custom IPW and AIPW stacked-sandwich implementations were checked against numerical finite-difference Jacobians and participant-level nonparametric bootstrap standard errors. The historical validation script and compact outputs are archived under `validation/`.
+
+This material is intentionally separated from the final production simulation results. The final primary simulation summaries under `results/summary/` supersede the earlier 2,000-repetition validation benchmark for manuscript performance estimates.
+
 ## Software environment
 
 The Torch analysis environment used R 4.5.1. Package requirements are listed in `hpc/install_required_packages.R`, and the captured R session and package versions are stored in `sessionInfo.txt`.
@@ -61,7 +68,8 @@ Completed:
 - disclosure-safe aggregate real-world outputs, tables, figures, and QC files are archived;
 - calibration summaries used by the simulation are archived;
 - `sessionInfo.txt` records the analysis software environment;
-- participant-level MIDUS data, raw Monte Carlo chunks, checkpoints, and caches are excluded from the public repository.
+- participant-level MIDUS data, raw Monte Carlo chunks, checkpoints, and caches are excluded from the public repository;
+- compact pre-production numerical-Jacobian/bootstrap variance-validation evidence is archived under `validation/`, while repetition-level validation objects are excluded.
 
 Remaining before creating the manuscript release:
 
