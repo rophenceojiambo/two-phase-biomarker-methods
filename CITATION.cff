@@ -2,6 +2,8 @@ cff-version: 1.2.0
 message: "If you use this code, please cite the accompanying manuscript and this software repository."
 title: "Incorporating Partially Observed RNA-Based Leukocyte Proxies for Cellular Heterogeneity in Epigenetic Aging Studies: A Two-Phase Simulation Study"
 type: software
+version: 1.0.0
+date-released: 2026-10-04
 authors:
   - family-names: "Ojiambo"
     given-names: "Rophence"
