@@ -255,7 +255,7 @@ docx_nonempty <- all(
 #
 # This is intentionally more robust than checking the exported CSV column
 # headers because gtsummary::as_tibble() may retain raw names such as `label`
-# rather than the manuscript-facing display header "Outcome".
+# rather than the display header "Outcome" used in the manuscript.
 # ------------------------------------------------------------------
 
 table4a_body_qc <- if (
