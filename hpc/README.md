@@ -19,7 +19,7 @@ The MIDUS analysis file is not included. By default, the scripts look for:
 data/MIDUS_discrimination_analysis.rds
 ```
 
-If the file is stored elsewhere, set `SIM_ANALYTIC_RDS`.
+Use `SIM_ANALYTIC_RDS` to set source of the file.
 
 ## Running the workflow again
 
@@ -49,7 +49,6 @@ After jobs finish, the combined and summarized results used for the paper can be
 The HPC scripts:
 
 - use the repository root as the project directory;
-- avoid hard-coded personal paths;
 - pass project paths through environment variables;
 - use scratch space for R packages and temporary files;
 - preserve the simulation random-number setup;
