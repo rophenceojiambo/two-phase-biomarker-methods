@@ -315,7 +315,7 @@ prepare_analysis_data <- function(data, outcome_variable) {
 }
 
 # ==============================================================================
-# 6. RUN ALL SIX METHODS FOR BOTH OUTCOMES
+# 6. RUN ALL SIX METHODS FOR BOTH OUTCOMES.
 # ==============================================================================
 
 outcome_map <- tibble::tribble(
