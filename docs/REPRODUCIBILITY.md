@@ -23,7 +23,7 @@ The MIDUS application uses:
 data/MIDUS_discrimination_analysis.rds
 ```
 
-If you have access to the data and keep the file elsewhere, set its path with `SIM_ANALYTIC_RDS`.
+For the MIDUS data, set its path with `SIM_ANALYTIC_RDS`.
 
 The MIDUS source data and participant-level analysis file are not included in this repository. `prepare_midus_analytic_sample.R` shows how the analysis file was created.
 
@@ -50,8 +50,6 @@ Scripts `44`–`48` produce the method estimates, sample summaries, weight check
 
 The aggregate results are in `results/real_world_application/`. Figure 6 and the data used for Tables 3–4 are also placed in `results/manuscript/main/`.
 
-Participant-level MIDUS data are not included.
-
 ## Variance checks
 
 Before the final production simulation, the custom IPW and AIPW sandwich standard errors were checked against:
@@ -65,11 +63,3 @@ The script and compact results are in `validation/`. These checks are separate f
 
 The Torch analysis used R 4.5.1. Package requirements are listed in `hpc/install_required_packages.R`, and `sessionInfo.txt` records the R session used for the analysis.
 
-## Before the final release
-
-Remaining steps:
-
-- finish the final repository review;
-- update `results/PUBLIC_RESULTS_MANIFEST.csv` after the result files are final;
-- update `CITATION.cff` with the final citation information and DOI;
-- create the GitHub release and DOI.
