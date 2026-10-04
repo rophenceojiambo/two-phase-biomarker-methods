@@ -95,7 +95,7 @@ file_sizes <- ifelse(
 )
 
 
-# Read the explicit Table 3 standardization QC written by Script 47.
+# Read the Table 3 standardization QC written by Script 47.
 table3_standardization_qc_file <- file.path(
   table_dir,
   "Table3_standardization_qc.csv"
