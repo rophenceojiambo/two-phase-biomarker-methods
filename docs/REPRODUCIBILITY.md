@@ -54,7 +54,7 @@ Participant-level MIDUS data are not included.
 
 ## Variance checks
 
-Before the final production simulation, I checked the custom IPW and AIPW sandwich standard errors against:
+Before the final production simulation, the custom IPW and AIPW sandwich standard errors were checked against:
 
 - the same estimating equations with a numerical finite-difference Jacobian; and
 - a participant-level nonparametric bootstrap.
