@@ -87,6 +87,8 @@ results/manuscript/
 
 This folder contains Figures 1–6, Supplementary Figures S1–S10, Tables 3–4 data, and Supplementary Tables S1–S6. The detailed simulation, sensitivity, QC, and MIDUS result files remain in their analysis-specific folders under `results/`.
 
+`results/RESULTS_MANIFEST.csv` lists the files under `results/` together with file sizes and SHA-256 checksums for integrity checks.
+
 Raw Monte Carlo chunk files, checkpoints, caches, and participant-level MIDUS data are not included.
 
 ## Software
@@ -105,4 +107,4 @@ The code is released under the MIT License. The license does not apply to MIDUS 
 
 ## Current status
 
-The analysis code, summarized results, manuscript figures and tables, MIDUS preparation code, software information, and variance-validation checks are included. Before creating the final release, the remaining steps are to finish the last repository review, update the result manifest, update the citation information, and create the release/DOI.
+The repository review is complete. The analysis code, summarized results, manuscript figures and tables, MIDUS preparation code, software information, variance-validation checks, and results manifest are included. The repository is ready for a v1.0.0 release. After a DOI is created for the release, the DOI should be added to the README and `CITATION.cff`.
