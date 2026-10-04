@@ -1,7 +1,7 @@
 ################################################################################
 # 45_make_real_world_manuscript_outputs.R
 #
-# Creates manuscriptMtables and figures for the MIDUS real-world
+# Creates manuscript tables and figures for the MIDUS real-world
 # application using the already-completed six-method analysis from Script 44.
 #
 # This script uses the saved results from Script 44 and does not rerun multiple
